@@ -1,4 +1,4 @@
-# N1 Extensão - ProgRamação para Web
+# N1 Extensão - Programação para Web
 
 Atividade em Grupo
 - integrantes:
