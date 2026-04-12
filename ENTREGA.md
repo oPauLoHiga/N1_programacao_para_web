@@ -1,55 +1,37 @@
-# Roteiro de entrega
+# Roteiro de entrega HTML/CSS
 
-## 1. Portal HTML/CSS
+## Abrir o projeto
 
-Abrir com Live Server:
+No VS Code, use o Live Server em:
 
 ```text
 fakenews_grupo_99/index.html
 ```
 
-Pontos para mostrar:
+## O que mostrar
 
-- Página inicial com chamadas de notícias.
-- Listagem pública em `publico/noticias.html`.
-- Detalhe de notícia em `publico/noticia.html`.
-- Login e cadastro em `publico/login.html` e `publico/cadastro.html`.
-- Área do leitor em `leitor/feed.html` e `leitor/perfil.html`.
-- Área do autor em `autor/noticias.html`.
-- CRUD de notícias em `autor/noticia-crud.html`.
-- Painel do superadmin em `superadmin/dashboard.html`.
-- CRUD de UF, cidade e tag em `superadmin/uf-crud.html`, `superadmin/cidade-crud.html` e `superadmin/tag-crud.html`.
+1. Página inicial com chamadas de notícias.
+2. Listagem pública em `publico/noticias.html`.
+3. Detalhe de notícia em `publico/noticia.html`.
+4. Login e cadastro em `publico/login.html` e `publico/cadastro.html`.
+5. Área do leitor em `leitor/feed.html`.
+6. Perfil do leitor em `leitor/perfil.html`.
+7. Área do autor em `autor/noticias.html`.
+8. CRUD de notícias em `autor/noticia-crud.html`.
+9. Painel do superadmin em `superadmin/dashboard.html`.
+10. CRUD de UF em `superadmin/uf-crud.html`.
+11. CRUD de cidade em `superadmin/cidade-crud.html`.
+12. CRUD de tag em `superadmin/tag-crud.html`.
 
-## 2. CLI TypeScript
-
-Instalar dependências:
-
-```bash
-npm install
-```
-
-Rodar o programa:
-
-```bash
-npm start
-```
-
-Fluxo sugerido para demonstrar:
-
-1. Cadastrar uma UF.
-2. Cadastrar uma cidade.
-3. Cadastrar duas tags.
-4. Cadastrar uma notícia escolhendo a cidade e as tags.
-5. Listar notícias mais recentes.
-6. Listar notícias por estado.
-7. Exibir notícias agrupadas por estado e detalhar uma notícia.
-
-## 3. Requisitos atendidos
+## Requisitos atendidos
 
 - HTML e CSS sem frameworks.
 - Estrutura com `assets`, `publico`, `autor`, `leitor`, `superadmin` e `index.html`.
-- Telas de CRUD com listar, criar, exibir, atualizar e apagar.
-- CLI em TypeScript com Drizzle ORM e SQLite.
-- Entidade `tag`.
-- Tabela associativa `noticia_tag`.
-- Funcionalidades antigas do CLI mantidas.
+- Imagens locais em `assets/images`.
+- CSS centralizado em `assets/css/estilo.css`.
+- Navegação por links entre as páginas.
+- CRUDs com listar, criar, exibir, atualizar e apagar.
+
+## Observação sobre Figma
+
+O enunciado também pede telas no Figma Design com link público do protótipo. Esse link deve ser criado/enviado separadamente no Figma, caso o professor cobre junto com os arquivos HTML/CSS.
