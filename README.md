@@ -1,6 +1,6 @@
 # N1 Extensão - Programação para Web
 
-Atividade em grupo.
+Atividade em grupo da disciplina de Programação Web.
 
 ## Integrantes
 
@@ -9,31 +9,33 @@ Atividade em grupo.
 - Celso Teixeira de Oliveira Júnior
 - Lara Rodrigues Holanda Leal
 
-## Entrega deste repositório
+## Entrega
 
 Este repositório contém a parte de páginas estáticas HTML/CSS do portal de notícias **Fake News**.
 
-A pasta `WebMec/` mantém os documentos/imagens iniciais do projeto.
+A pasta `WebMec/` mantém os documentos e imagens iniciais do projeto. A implementação final do portal está em `fakenews_grupo_99/`.
 
 ## Como abrir
 
-Abra pelo VS Code com a extensão Live Server:
+Abra o projeto no VS Code e execute com a extensão Live Server a partir deste arquivo:
 
 ```text
 fakenews_grupo_99/index.html
 ```
 
-Também é possível abrir o arquivo `index.html` diretamente pelo navegador, mas o Live Server é o formato pedido no enunciado.
+Também é possível abrir o arquivo diretamente no navegador, mas o Live Server é o formato indicado no enunciado.
 
 ## Regras atendidas
 
 - HTML e CSS puro.
 - Sem JavaScript.
-- Sem React, Bootstrap, Tailwind ou outros frameworks.
+- Sem React, Bootstrap, Tailwind, CDN ou outros frameworks/bibliotecas.
 - Navegação entre páginas por links.
 - Estrutura de pastas conforme o enunciado.
+- Imagens locais em `assets/images`.
+- CSS centralizado em `assets/css/estilo.css`.
 - Telas estáticas para as áreas pública, leitor, autor e superadmin.
-- Telas de CRUD com listar, criar, exibir, atualizar e apagar.
+- Telas de CRUD com listar todos, criar, exibir, atualizar e apagar.
 
 ## Estrutura
 
@@ -70,7 +72,7 @@ fakenews_grupo_99/
   index.html
 ```
 
-## Fluxos
+## Fluxos implementados
 
 | Área | Páginas |
 | --- | --- |
@@ -81,13 +83,22 @@ fakenews_grupo_99/
 
 ## CRUDs
 
-As páginas abaixo possuem as cinco partes pedidas no enunciado: listar todos, criar, exibir, atualizar e apagar.
+As páginas abaixo possuem as cinco partes pedidas quando o enunciado cita CRUD:
 
 - `fakenews_grupo_99/autor/noticia-crud.html`
 - `fakenews_grupo_99/superadmin/uf-crud.html`
 - `fakenews_grupo_99/superadmin/cidade-crud.html`
 - `fakenews_grupo_99/superadmin/tag-crud.html`
 
+## Validação
+
+A entrega foi revisada para garantir que:
+
+- todos os links e imagens locais existem;
+- não há arquivos de Node/TypeScript ou dependências sobrando;
+- não há uso de frameworks, scripts ou CDN;
+- a navegação principal funciona a partir da página inicial.
+
 ## Roteiro rápido
 
-Consulte `ENTREGA.md` para mais informação.
+Consulte `ENTREGA.md` para uma sequência objetiva de apresentação.

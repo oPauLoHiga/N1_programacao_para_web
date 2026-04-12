@@ -12,7 +12,8 @@
   --yellow: #f2c94c;
   --warning: #9b5c00;
   --radius: 8px;
-  --shadow: 0 12px 30px rgba(31, 31, 31, 0.1);
+  --shadow: 0 16px 36px rgba(31, 31, 31, 0.12);
+  --shadow-soft: 0 8px 22px rgba(31, 31, 31, 0.08);
 }
 
 * {
@@ -25,7 +26,7 @@ html {
 
 body {
   margin: 0;
-  background: var(--bg);
+  background: linear-gradient(180deg, #ffffff 0%, #fbfcf9 42%, #ffffff 100%);
   color: var(--text);
   font-family: Arial, Helvetica, sans-serif;
   font-size: 16px;
@@ -68,7 +69,8 @@ textarea {
 
 .site-header {
   border-bottom: 1px solid var(--line);
-  background: #ffffff;
+  background: rgba(255, 255, 255, 0.96);
+  box-shadow: 0 6px 18px rgba(31, 31, 31, 0.06);
   position: sticky;
   top: 0;
   z-index: 20;
@@ -147,6 +149,7 @@ textarea {
 
 .button:hover {
   background: var(--accent-strong);
+  transform: translateY(-1px);
 }
 
 .button-outline {
@@ -655,4 +658,88 @@ td {
   .choice-grid {
     grid-template-columns: 1fr;
   }
+}
+
+/* Refinamento visual final */
+::selection {
+  background: var(--yellow);
+  color: var(--text);
+}
+
+:focus-visible {
+  outline: 3px solid rgba(215, 38, 56, 0.35);
+  outline-offset: 3px;
+}
+
+.button,
+.button-outline,
+.button-soft,
+.button-danger,
+.mini-link,
+.nav a,
+.side-nav a,
+.news-card,
+.info-card,
+.metric-card,
+.person-card,
+.panel {
+  transition: background-color 160ms ease, border-color 160ms ease, box-shadow 160ms ease, color 160ms ease, transform 160ms ease;
+}
+
+.news-card:hover,
+.info-card:hover,
+.metric-card:hover,
+.person-card:hover {
+  box-shadow: var(--shadow-soft);
+  transform: translateY(-2px);
+}
+
+.panel,
+.news-card,
+.info-card,
+.metric-card,
+.person-card {
+  box-shadow: 0 1px 0 rgba(31, 31, 31, 0.03);
+}
+
+.top-story {
+  border: 1px solid rgba(255, 255, 255, 0.35);
+}
+
+.top-story-content h1 {
+  text-wrap: balance;
+}
+
+.lead,
+.news-card p,
+.info-card p,
+.person-card p,
+.hint {
+  text-wrap: pretty;
+}
+
+.field input:focus,
+.field select:focus,
+.field textarea:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 4px rgba(215, 38, 56, 0.08);
+  outline: none;
+}
+
+.choice:hover,
+.mini-link:hover,
+.button-outline:hover {
+  border-color: var(--accent);
+}
+
+tbody tr:hover td {
+  background: #fffdf4;
+}
+
+.page-header {
+  background: linear-gradient(135deg, var(--surface) 0%, #ffffff 62%, #fff7db 100%);
+}
+
+.footer {
+  border-top: 5px solid var(--accent);
 }
