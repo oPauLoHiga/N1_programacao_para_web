@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Notícias | Fake News</title>
+  <link rel="stylesheet" href="../assets/css/estilo.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container topbar">
+      <a class="brand" href="../index.html"><img src="../assets/images/logo.png" alt="Fake News"></a>
+      <nav class="nav" aria-label="Navegação principal">
+        <a href="../index.html">Início</a>
+        <a class="active" href="noticias.html">Notícias</a>
+        <a href="../leitor/feed.html">Leitor</a>
+        <a href="../autor/noticias.html">Autor</a>
+        <a href="../superadmin/dashboard.html">Superadmin</a>
+      </nav>
+      <div class="actions">
+        <a class="button-outline" href="login.html">Entrar</a>
+        <a class="button" href="cadastro.html">Criar conta</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="page-header">
+      <div class="container">
+        <div class="crumbs">Início / Notícias</div>
+        <h1>Notícias publicadas</h1>
+        <p class="lead">Busca por cidade, UF, categoria e tag para leitura rápida.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container columns">
+        <div class="stack">
+          <article class="news-card">
+            <img src="../assets/images/noticia-cidade.png" alt="Centro urbano com fluxo de pessoas">
+            <div class="news-card-body">
+              <div class="tag-list">
+                <span class="tag">Cidade</span>
+                <span class="tag">DF</span>
+              </div>
+              <h3>Plano de mobilidade prioriza transporte público nos próximos bairros</h3>
+              <p>Corredores de ônibus, ciclovias e travessias seguras entram em consulta pública.</p>
+              <div class="meta"><span>Brasília</span><span>12/04/2026</span><span>Autor: Laura Souza</span></div>
+              <a class="button-soft" href="noticia.html">Ler notícia</a>
+            </div>
+          </article>
+
+          <article class="news-card">
+            <img src="../assets/images/noticia-saude.png" alt="Ilustração de saúde pública">
+            <div class="news-card-body">
+              <div class="tag-list">
+                <span class="tag">Saúde</span>
+                <span class="tag">Serviço</span>
+              </div>
+              <h3>Unidades ampliam vacinação no fim de semana</h3>
+              <p>Famílias poderão atualizar a caderneta em postos de referência.</p>
+              <div class="meta"><span>Vitória</span><span>12/04/2026</span><span>Autor: Rafael Moraes</span></div>
+              <a class="button-soft" href="noticia.html">Ler notícia</a>
+            </div>
+          </article>
+
+          <article class="news-card">
+            <img src="../assets/images/noticia-cultura.png" alt="Agenda cultural em destaque">
+            <div class="news-card-body">
+              <div class="tag-list">
+                <span class="tag">Cultura</span>
+                <span class="tag">ES</span>
+              </div>
+              <h3>Festival reúne música, teatro e gastronomia local</h3>
+              <p>Programação gratuita ocupa praças e centros culturais durante três dias.</p>
+              <div class="meta"><span>Vila Velha</span><span>11/04/2026</span><span>Autor: Laura Souza</span></div>
+              <a class="button-soft" href="noticia.html">Ler notícia</a>
+            </div>
+          </article>
+        </div>
+
+        <aside class="panel">
+          <h2>Filtrar notícias</h2>
+          <form class="form-grid" action="noticias.html">
+            <div class="field">
+              <label for="q">Palavra-chave</label>
+              <input id="q" name="q" type="search" placeholder="Ex.: transporte">
+            </div>
+            <div class="field">
+              <label for="uf">UF</label>
+              <select id="uf" name="uf">
+                <option>Todas</option>
+                <option>DF</option>
+                <option>ES</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="categoria">Categoria</label>
+              <select id="categoria" name="categoria">
+                <option>Todas</option>
+                <option>Cidade</option>
+                <option>Saúde</option>
+                <option>Tecnologia</option>
+                <option>Cultura</option>
+              </select>
+            </div>
+            <button class="button" type="submit">Buscar</button>
+          </form>
+        </aside>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-grid">
+      <p>Fake News</p>
+      <p><a href="login.html">Entrar</a></p>
+      <p><a href="../index.html">Voltar ao início</a></p>
+    </div>
+  </footer>
+</body>
+</html>

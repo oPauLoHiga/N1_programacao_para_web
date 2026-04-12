@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Perfil do leitor | Fake News</title>
+  <link rel="stylesheet" href="../assets/css/estilo.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container topbar">
+      <a class="brand" href="../index.html"><img src="../assets/images/logo.png" alt="Fake News"></a>
+      <nav class="nav" aria-label="Navegação principal">
+        <a href="../index.html">Início</a>
+        <a href="../publico/noticias.html">Notícias</a>
+        <a class="active" href="feed.html">Leitor</a>
+        <a href="../autor/noticias.html">Autor</a>
+        <a href="../superadmin/dashboard.html">Superadmin</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="section">
+      <div class="container columns">
+        <form class="panel form-grid" action="feed.html">
+          <span class="eyebrow">Perfil</span>
+          <h1>Dados do leitor</h1>
+          <div class="profile-row">
+            <img class="avatar" src="../assets/images/perfis/user2.png" alt="Rafael Moraes">
+            <div>
+              <strong>Rafael Moraes</strong>
+              <p class="hint">Leitor ativo desde abril de 2026.</p>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="field">
+              <label for="nome">Nome</label>
+              <input id="nome" name="nome" type="text" value="Rafael Moraes">
+            </div>
+            <div class="field">
+              <label for="cidade">Cidade</label>
+              <input id="cidade" name="cidade" type="text" value="Brasília">
+            </div>
+          </div>
+          <div class="field">
+            <label for="email">E-mail</label>
+            <input id="email" name="email" type="email" value="rafael@email.com">
+          </div>
+          <fieldset class="choice-group">
+            <legend>Preferências</legend>
+            <div class="choice-grid">
+              <label class="choice"><input type="checkbox" checked> Cidade</label>
+              <label class="choice"><input type="checkbox" checked> Saúde</label>
+              <label class="choice"><input type="checkbox" checked> Tecnologia</label>
+              <label class="choice"><input type="checkbox"> Cultura</label>
+              <label class="choice"><input type="checkbox"> Política</label>
+              <label class="choice"><input type="checkbox"> Educação</label>
+            </div>
+          </fieldset>
+          <button class="button" type="submit">Salvar perfil</button>
+        </form>
+
+        <aside class="stack">
+          <div class="metric-card">
+            <span class="hint">Matérias salvas</span>
+            <strong>8</strong>
+          </div>
+          <div class="metric-card">
+            <span class="hint">Comentários enviados</span>
+            <strong>3</strong>
+          </div>
+          <div class="panel">
+            <h2>Últimos comentários</h2>
+            <p>“Essa rota ajudaria muito quem depende do ônibus.”</p>
+            <p>“Ótima notícia para as oficinas digitais.”</p>
+          </div>
+        </aside>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-grid">
+      <p>Fake News</p>
+      <p><a href="feed.html">Meu feed</a></p>
+      <p><a href="../index.html">Sair</a></p>
+    </div>
+  </footer>
+</body>
+</html>

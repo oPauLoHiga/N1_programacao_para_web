@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CRUD de tags | Fake News</title>
+  <link rel="stylesheet" href="../assets/css/estilo.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container topbar">
+      <a class="brand" href="../index.html"><img src="../assets/images/logo.png" alt="Fake News"></a>
+      <nav class="nav" aria-label="Navegação principal">
+        <a href="../index.html">Início</a>
+        <a href="../publico/noticias.html">Notícias</a>
+        <a href="../autor/noticias.html">Autor</a>
+        <a class="active" href="dashboard.html">Superadmin</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container dashboard">
+    <aside class="side-nav">
+      <a href="dashboard.html">Dashboard</a>
+      <a href="uf-crud.html#listar">UFs</a>
+      <a href="cidade-crud.html#listar">Cidades</a>
+      <a class="active" href="#listar">Listar tags</a>
+      <a href="#criar">Criar</a>
+      <a href="#exibir">Exibir</a>
+      <a href="#atualizar">Atualizar</a>
+      <a href="#apagar">Apagar</a>
+    </aside>
+
+    <section class="content-area">
+      <section id="listar" class="panel">
+        <span class="eyebrow">Listar todos</span>
+        <h1>Tags cadastradas</h1>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>ID</th><th>Nome</th><th>Notícias</th><th>Ações</th></tr></thead>
+            <tbody>
+              <tr>
+                <td>1</td>
+                <td>Cidade</td>
+                <td>6</td>
+                <td class="table-actions"><a class="mini-link" href="#exibir">Exibir</a><a class="mini-link" href="#atualizar">Atualizar</a><a class="mini-link danger" href="#apagar">Apagar</a></td>
+              </tr>
+              <tr>
+                <td>2</td>
+                <td>Tecnologia</td>
+                <td>4</td>
+                <td class="table-actions"><a class="mini-link" href="#exibir">Exibir</a><a class="mini-link" href="#atualizar">Atualizar</a><a class="mini-link danger" href="#apagar">Apagar</a></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section id="criar" class="panel">
+        <span class="eyebrow">Criar</span>
+        <h2>Cadastrar tag</h2>
+        <form class="form-grid" action="#listar">
+          <div class="field"><label for="nome">Nome da tag</label><input id="nome" type="text" placeholder="Ex.: Educação"></div>
+          <button class="button" type="submit">Salvar tag</button>
+        </form>
+      </section>
+
+      <section id="exibir" class="panel">
+        <span class="eyebrow">Exibir</span>
+        <h2>Cidade</h2>
+        <p>ID: 1</p>
+        <p>Notícias vinculadas: 6.</p>
+        <div class="tag-list"><span class="tag">Cidade</span></div>
+      </section>
+
+      <section id="atualizar" class="panel">
+        <span class="eyebrow">Atualizar</span>
+        <h2>Editar tag</h2>
+        <form class="form-grid" action="#listar">
+          <div class="field"><label for="nome-editar">Nome da tag</label><input id="nome-editar" type="text" value="Cidade"></div>
+          <button class="button" type="submit">Atualizar tag</button>
+        </form>
+      </section>
+
+      <section id="apagar" class="panel">
+        <span class="eyebrow">Apagar</span>
+        <h2>Remover tag</h2>
+        <p>Confirme a remoção da tag Cidade. Notícias vinculadas ficarão sem essa classificação.</p>
+        <div class="actions">
+          <a class="button-danger" href="#listar">Confirmar remoção</a>
+          <a class="button-outline" href="#listar">Cancelar</a>
+        </div>
+      </section>
+    </section>
+  </main>
+</body>
+</html>

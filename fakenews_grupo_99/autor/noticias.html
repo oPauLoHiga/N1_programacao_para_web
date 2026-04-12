@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Área do autor | Fake News</title>
+  <link rel="stylesheet" href="../assets/css/estilo.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container topbar">
+      <a class="brand" href="../index.html"><img src="../assets/images/logo.png" alt="Fake News"></a>
+      <nav class="nav" aria-label="Navegação principal">
+        <a href="../index.html">Início</a>
+        <a href="../publico/noticias.html">Notícias</a>
+        <a href="../leitor/feed.html">Leitor</a>
+        <a class="active" href="noticias.html">Autor</a>
+        <a href="../superadmin/dashboard.html">Superadmin</a>
+      </nav>
+      <div class="actions">
+        <a class="button" href="noticia-crud.html#criar">Nova notícia</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="container dashboard">
+    <aside class="side-nav">
+      <a class="active" href="noticias.html">Minhas notícias</a>
+      <a href="noticia-crud.html#listar">Listar</a>
+      <a href="noticia-crud.html#criar">Criar</a>
+      <a href="noticia-crud.html#exibir">Exibir</a>
+      <a href="noticia-crud.html#atualizar">Atualizar</a>
+      <a href="noticia-crud.html#apagar">Apagar</a>
+    </aside>
+
+    <section class="content-area">
+      <div class="section-title">
+        <div>
+          <span class="eyebrow">Autor</span>
+          <h1>Minhas notícias</h1>
+          <p class="lead">Acompanhe rascunhos, publicações e matérias aguardando revisão.</p>
+        </div>
+        <a class="button" href="noticia-crud.html#criar">Cadastrar notícia</a>
+      </div>
+
+      <div class="metric-grid">
+        <div class="metric-card"><span class="hint">Publicadas</span><strong>12</strong></div>
+        <div class="metric-card"><span class="hint">Rascunhos</span><strong>4</strong></div>
+        <div class="metric-card"><span class="hint">Em revisão</span><strong>2</strong></div>
+        <div class="metric-card"><span class="hint">Tags usadas</span><strong>9</strong></div>
+      </div>
+
+      <div class="panel table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Título</th>
+              <th>Cidade/UF</th>
+              <th>Tags</th>
+              <th>Status</th>
+              <th>Ações</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Plano de mobilidade prioriza transporte público</td>
+              <td>Brasília/DF</td>
+              <td>Cidade, Mobilidade</td>
+              <td><span class="status">Publicada</span></td>
+              <td class="table-actions">
+                <a class="mini-link" href="noticia-crud.html#exibir">Ver</a>
+                <a class="mini-link" href="noticia-crud.html#atualizar">Editar</a>
+                <a class="mini-link danger" href="noticia-crud.html#apagar">Apagar</a>
+              </td>
+            </tr>
+            <tr>
+              <td>Festival reúne música e teatro</td>
+              <td>Vila Velha/ES</td>
+              <td>Cultura, Agenda</td>
+              <td><span class="status pending">Rascunho</span></td>
+              <td class="table-actions">
+                <a class="mini-link" href="noticia-crud.html#exibir">Ver</a>
+                <a class="mini-link" href="noticia-crud.html#atualizar">Editar</a>
+                <a class="mini-link danger" href="noticia-crud.html#apagar">Apagar</a>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+</body>
+</html>

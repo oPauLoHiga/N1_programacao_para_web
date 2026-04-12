@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Meu feed | Fake News</title>
+  <link rel="stylesheet" href="../assets/css/estilo.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container topbar">
+      <a class="brand" href="../index.html"><img src="../assets/images/logo.png" alt="Fake News"></a>
+      <nav class="nav" aria-label="Navegação principal">
+        <a href="../index.html">Início</a>
+        <a href="../publico/noticias.html">Notícias</a>
+        <a class="active" href="feed.html">Leitor</a>
+        <a href="../autor/noticias.html">Autor</a>
+        <a href="../superadmin/dashboard.html">Superadmin</a>
+      </nav>
+      <div class="actions">
+        <a class="button-outline" href="perfil.html">Meu perfil</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="page-header">
+      <div class="container">
+        <div class="crumbs">Leitor / Feed</div>
+        <h1>Notícias para você</h1>
+        <p class="lead">Matérias salvas, temas acompanhados e histórico recente de leitura.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container columns">
+        <div class="stack">
+          <article class="news-card">
+            <img src="../assets/images/noticia-tecnologia.png" alt="Conteúdo de tecnologia">
+            <div class="news-card-body">
+              <span class="tag">Tecnologia</span>
+              <h3>Laboratório público abre vagas para oficinas digitais</h3>
+              <p>Aulas de programação, segurança digital e edição de conteúdo começam na próxima semana.</p>
+              <div class="meta"><span>Salva hoje</span><span>4 min de leitura</span></div>
+              <a class="mini-link" href="../publico/noticia.html">Continuar lendo</a>
+            </div>
+          </article>
+          <article class="news-card">
+            <img src="../assets/images/noticia-saude.png" alt="Conteúdo de saúde">
+            <div class="news-card-body">
+              <span class="tag">Saúde</span>
+              <h3>Unidades ampliam vacinação no fim de semana</h3>
+              <p>Postos terão horário estendido e equipes extras para atendimento.</p>
+              <div class="meta"><span>Recomendação</span><span>3 min de leitura</span></div>
+              <a class="mini-link" href="../publico/noticia.html">Abrir</a>
+            </div>
+          </article>
+        </div>
+
+        <aside class="stack">
+          <div class="panel">
+            <h2>Leitor</h2>
+            <div class="profile-row">
+              <img class="avatar" src="../assets/images/perfis/user2.png" alt="Rafael Moraes">
+              <div>
+                <strong>Rafael Moraes</strong>
+                <p class="hint">Acompanha Cidade, Saúde e Tecnologia.</p>
+              </div>
+            </div>
+          </div>
+          <div class="panel">
+            <h2>Tags acompanhadas</h2>
+            <div class="tag-list">
+              <span class="tag">Cidade</span>
+              <span class="tag">Saúde</span>
+              <span class="tag">Tecnologia</span>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-grid">
+      <p>Fake News</p>
+      <p><a href="perfil.html">Meu perfil</a></p>
+      <p><a href="../publico/noticias.html">Notícias</a></p>
+    </div>
+  </footer>
+</body>
+</html>

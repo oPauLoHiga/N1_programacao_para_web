@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Superadmin | Fake News</title>
+  <link rel="stylesheet" href="../assets/css/estilo.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container topbar">
+      <a class="brand" href="../index.html"><img src="../assets/images/logo.png" alt="Fake News"></a>
+      <nav class="nav" aria-label="Navegação principal">
+        <a href="../index.html">Início</a>
+        <a href="../publico/noticias.html">Notícias</a>
+        <a href="../leitor/feed.html">Leitor</a>
+        <a href="../autor/noticias.html">Autor</a>
+        <a class="active" href="dashboard.html">Superadmin</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container dashboard">
+    <aside class="side-nav">
+      <a class="active" href="dashboard.html">Dashboard</a>
+      <a href="uf-crud.html#listar">UFs</a>
+      <a href="cidade-crud.html#listar">Cidades</a>
+      <a href="tag-crud.html#listar">Tags</a>
+      <a href="../autor/noticia-crud.html#listar">Notícias</a>
+    </aside>
+
+    <section class="content-area">
+      <div>
+        <span class="eyebrow">Superadmin</span>
+        <h1>Painel geral</h1>
+        <p class="lead">Cadastros base do portal, publicação de notícias e organização por UF, cidade e tag.</p>
+      </div>
+
+      <div class="metric-grid">
+        <a class="metric-card" href="uf-crud.html#listar"><span class="hint">UFs</span><strong>2</strong></a>
+        <a class="metric-card" href="cidade-crud.html#listar"><span class="hint">Cidades</span><strong>5</strong></a>
+        <a class="metric-card" href="../autor/noticia-crud.html#listar"><span class="hint">Notícias</span><strong>18</strong></a>
+        <a class="metric-card" href="tag-crud.html#listar"><span class="hint">Tags</span><strong>9</strong></a>
+      </div>
+
+      <div class="news-grid">
+        <a class="info-card" href="uf-crud.html#criar">
+          <h3>Cadastrar UF</h3>
+          <p>Nome e sigla usados no cadastro de cidades.</p>
+        </a>
+        <a class="info-card" href="cidade-crud.html#criar">
+          <h3>Cadastrar cidade</h3>
+          <p>Cidade vinculada a uma UF existente.</p>
+        </a>
+        <a class="info-card" href="tag-crud.html#criar">
+          <h3>Cadastrar tag</h3>
+          <p>Categoria de assunto usada nas notícias.</p>
+        </a>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
