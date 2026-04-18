@@ -3,150 +3,122 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>CRUD de notícias | Fake News</title>
+  <title>CRUD de noticias | Portal Fake News</title>
   <link rel="stylesheet" href="../assets/css/estilo.css">
 </head>
 <body>
   <header class="site-header">
     <div class="container topbar">
-      <a class="brand" href="../index.html"><img src="../assets/images/logo.png" alt="Fake News"></a>
-      <nav class="nav" aria-label="Navegação principal">
-        <a href="../index.html">Início</a>
-        <a href="../publico/noticias.html">Notícias</a>
-        <a href="../leitor/feed.html">Leitor</a>
-        <a class="active" href="noticias.html">Autor</a>
-        <a href="../superadmin/dashboard.html">Superadmin</a>
+      <a class="brand" href="../index.html">Portal <span>Fake News</span></a>
+      <nav class="nav">
+        <a href="../index.html">Inicio</a>
+        <a href="../publico/noticias.html">Noticias</a>
+        <a class="active" href="noticia-crud.html">CRUD do autor</a>
       </nav>
     </div>
   </header>
 
-  <main class="container dashboard">
-    <aside class="side-nav">
-      <a href="noticias.html">Minhas notícias</a>
-      <a href="#listar">Listar</a>
-      <a href="#criar">Criar</a>
-      <a href="#exibir">Exibir</a>
-      <a href="#atualizar">Atualizar</a>
-      <a href="#apagar">Apagar</a>
-    </aside>
+  <main class="page">
+    <div class="container layout">
+      <aside class="sidebar">
+        <a href="noticias.html">Minhas noticias</a>
+        <a href="#listar">Listar</a>
+        <a href="#criar">Criar</a>
+        <a href="#exibir">Exibir</a>
+        <a href="#atualizar">Atualizar</a>
+        <a href="#apagar">Apagar</a>
+      </aside>
 
-    <section class="content-area">
-      <section id="listar" class="panel">
-        <span class="eyebrow">Listar todos</span>
-        <h1>Notícias cadastradas</h1>
-        <div class="table-wrap">
-          <table>
-            <thead>
-              <tr>
-                <th>ID</th>
-                <th>Título</th>
-                <th>Cidade</th>
-                <th>Tags</th>
-                <th>Status</th>
-                <th>Ações</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>1</td>
-                <td>Plano de mobilidade prioriza transporte público</td>
-                <td>Brasília/DF</td>
-                <td>Cidade, Mobilidade</td>
-                <td><span class="status">Publicada</span></td>
-                <td class="table-actions">
-                  <a class="mini-link" href="#exibir">Exibir</a>
-                  <a class="mini-link" href="#atualizar">Atualizar</a>
-                  <a class="mini-link danger" href="#apagar">Apagar</a>
-                </td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-      </section>
+      <section class="content">
+        <section class="panel" id="listar">
+          <h1>Listar noticias</h1>
+          <p class="note">Tabela simples para visualizar materias cadastradas.</p>
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>Titulo</th>
+                  <th>Categoria</th>
+                  <th>Status</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Plano de mobilidade prioriza transporte publico</td>
+                  <td>Cidade</td>
+                  <td><span class="status success">Publicada</span></td>
+                </tr>
+                <tr>
+                  <td>Festival ocupa espacos publicos durante tres dias</td>
+                  <td>Cultura</td>
+                  <td><span class="status warning">Rascunho</span></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
 
-      <section id="criar" class="panel">
-        <span class="eyebrow">Criar</span>
-        <h2>Cadastrar notícia</h2>
-        <form class="form-grid" action="#listar">
-          <div class="field">
-            <label for="titulo">Título</label>
-            <input id="titulo" name="titulo" type="text" placeholder="Digite o título da notícia">
-          </div>
-          <div class="field">
-            <label for="texto">Texto</label>
-            <textarea id="texto" name="texto" placeholder="Digite o texto completo"></textarea>
-          </div>
-          <div class="form-row">
+        <section class="panel" id="criar">
+          <h2>Criar noticia</h2>
+          <form class="form-grid">
             <div class="field">
-              <label for="cidade">Cidade</label>
-              <select id="cidade" name="cidade">
-                <option>Brasília/DF</option>
-                <option>Vitória/ES</option>
-                <option>Vila Velha/ES</option>
-              </select>
+              <label for="titulo">Titulo</label>
+              <input id="titulo" type="text" placeholder="Digite o titulo da noticia">
             </div>
             <div class="field">
-              <label for="status">Status</label>
-              <select id="status" name="status">
-                <option>Rascunho</option>
-                <option>Publicada</option>
-                <option>Em revisão</option>
-              </select>
+              <label for="resumo">Resumo</label>
+              <textarea id="resumo" placeholder="Escreva um resumo"></textarea>
             </div>
-          </div>
-          <fieldset class="choice-group">
-            <legend>Tags</legend>
-            <div class="choice-grid">
-              <label class="choice"><input type="checkbox"> Cidade</label>
-              <label class="choice"><input type="checkbox"> Saúde</label>
-              <label class="choice"><input type="checkbox"> Tecnologia</label>
-              <label class="choice"><input type="checkbox"> Cultura</label>
-              <label class="choice"><input type="checkbox"> Mobilidade</label>
-              <label class="choice"><input type="checkbox"> Serviço</label>
+            <div class="actions">
+              <a class="button" href="#criar">Salvar</a>
             </div>
-          </fieldset>
-          <button class="button" type="submit">Salvar notícia</button>
-        </form>
-      </section>
+          </form>
+        </section>
 
-      <section id="exibir" class="panel">
-        <span class="eyebrow">Exibir</span>
-        <h2>Plano de mobilidade prioriza transporte público</h2>
-        <div class="meta"><span>Brasília/DF</span><span>12/04/2026</span><span>Laura Souza</span></div>
-        <img src="../assets/images/noticia-cidade.png" alt="Imagem da notícia">
-        <p>A prefeitura abriu consulta pública para definir corredores de ônibus e ciclovias em regiões de grande circulação.</p>
-        <div class="tag-list">
-          <span class="tag">Cidade</span>
-          <span class="tag">Mobilidade</span>
-        </div>
-      </section>
+        <section class="panel" id="exibir">
+          <h2>Exibir noticia</h2>
+          <p>Materia selecionada: Plano de mobilidade prioriza transporte publico.</p>
+        </section>
 
-      <section id="atualizar" class="panel">
-        <span class="eyebrow">Atualizar</span>
-        <h2>Editar notícia</h2>
-        <form class="form-grid" action="#listar">
-          <div class="field">
-            <label for="titulo-editar">Título</label>
-            <input id="titulo-editar" name="titulo" type="text" value="Plano de mobilidade prioriza transporte público">
-          </div>
-          <div class="field">
-            <label for="texto-editar">Texto</label>
-            <textarea id="texto-editar" name="texto">A prefeitura abriu consulta pública para definir corredores de ônibus e ciclovias em regiões de grande circulação.</textarea>
-          </div>
-          <button class="button" type="submit">Atualizar notícia</button>
-        </form>
-      </section>
+        <section class="panel" id="atualizar">
+          <h2>Atualizar noticia</h2>
+          <form class="form-grid">
+            <div class="field">
+              <label for="titulo-editar">Titulo</label>
+              <input id="titulo-editar" type="text" value="Plano de mobilidade prioriza transporte publico">
+            </div>
+            <div class="actions">
+              <a class="button" href="#atualizar">Atualizar</a>
+            </div>
+          </form>
+        </section>
 
-      <section id="apagar" class="panel">
-        <span class="eyebrow">Apagar</span>
-        <h2>Remover notícia</h2>
-        <p>Confirme a remoção da notícia “Plano de mobilidade prioriza transporte público”.</p>
-        <div class="actions">
-          <a class="button-danger" href="#listar">Confirmar remoção</a>
-          <a class="button-outline" href="#listar">Cancelar</a>
-        </div>
+        <section class="panel" id="apagar">
+          <h2>Apagar noticia</h2>
+          <p>Noticia selecionada: Festival ocupa espacos publicos durante tres dias.</p>
+          <a class="button danger" href="#apagar">Confirmar exclusao</a>
+        </section>
       </section>
-    </section>
+    </div>
   </main>
+
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div>
+        <strong>Portal Fake News</strong>
+        <p class="note">Projeto academico em HTML e CSS.</p>
+      </div>
+      <div>
+        <strong>Paginas</strong>
+        <p><a href="noticias.html">Minhas noticias</a></p>
+        <p><a href="../publico/noticias.html">Noticias publicas</a></p>
+      </div>
+      <div>
+        <strong>Areas</strong>
+        <p><a href="../leitor/feed.html">Leitor</a></p>
+        <p><a href="../superadmin/dashboard.html">Superadmin</a></p>
+      </div>
+    </div>
+  </footer>
 </body>
 </html>

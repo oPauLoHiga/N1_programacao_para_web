@@ -3,91 +3,98 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Área do autor | Fake News</title>
+  <title>Noticias do autor | Portal Fake News</title>
   <link rel="stylesheet" href="../assets/css/estilo.css">
 </head>
 <body>
   <header class="site-header">
     <div class="container topbar">
-      <a class="brand" href="../index.html"><img src="../assets/images/logo.png" alt="Fake News"></a>
-      <nav class="nav" aria-label="Navegação principal">
-        <a href="../index.html">Início</a>
-        <a href="../publico/noticias.html">Notícias</a>
-        <a href="../leitor/feed.html">Leitor</a>
+      <a class="brand" href="../index.html">Portal <span>Fake News</span></a>
+      <nav class="nav">
+        <a href="../index.html">Inicio</a>
+        <a href="../publico/noticias.html">Noticias</a>
         <a class="active" href="noticias.html">Autor</a>
         <a href="../superadmin/dashboard.html">Superadmin</a>
       </nav>
-      <div class="actions">
-        <a class="button" href="noticia-crud.html#criar">Nova notícia</a>
-      </div>
     </div>
   </header>
 
-  <main class="container dashboard">
-    <aside class="side-nav">
-      <a class="active" href="noticias.html">Minhas notícias</a>
-      <a href="noticia-crud.html#listar">Listar</a>
-      <a href="noticia-crud.html#criar">Criar</a>
-      <a href="noticia-crud.html#exibir">Exibir</a>
-      <a href="noticia-crud.html#atualizar">Atualizar</a>
-      <a href="noticia-crud.html#apagar">Apagar</a>
-    </aside>
+  <main class="page">
+    <div class="container layout">
+      <aside class="sidebar">
+        <a class="active" href="noticias.html">Minhas noticias</a>
+        <a href="noticia-crud.html#listar">Listar</a>
+        <a href="noticia-crud.html#criar">Criar</a>
+        <a href="noticia-crud.html#atualizar">Atualizar</a>
+        <a href="noticia-crud.html#apagar">Apagar</a>
+      </aside>
 
-    <section class="content-area">
-      <div class="section-title">
-        <div>
-          <span class="eyebrow">Autor</span>
-          <h1>Minhas notícias</h1>
-          <p class="lead">Acompanhe rascunhos, publicações e matérias aguardando revisão.</p>
+      <section class="content">
+        <div class="section-title">
+          <h1>Minhas noticias</h1>
+          <p class="note">Resumo simples da area do autor.</p>
         </div>
-        <a class="button" href="noticia-crud.html#criar">Cadastrar notícia</a>
-      </div>
 
-      <div class="metric-grid">
-        <div class="metric-card"><span class="hint">Publicadas</span><strong>12</strong></div>
-        <div class="metric-card"><span class="hint">Rascunhos</span><strong>4</strong></div>
-        <div class="metric-card"><span class="hint">Em revisão</span><strong>2</strong></div>
-        <div class="metric-card"><span class="hint">Tags usadas</span><strong>9</strong></div>
-      </div>
+        <div class="stats">
+          <div class="stat"><span class="note">Publicadas</span><strong>12</strong></div>
+          <div class="stat"><span class="note">Rascunhos</span><strong>4</strong></div>
+          <div class="stat"><span class="note">Em revisao</span><strong>2</strong></div>
+          <div class="stat"><span class="note">Visualizacoes</span><strong>860</strong></div>
+        </div>
 
-      <div class="panel table-wrap">
-        <table>
-          <thead>
-            <tr>
-              <th>Título</th>
-              <th>Cidade/UF</th>
-              <th>Tags</th>
-              <th>Status</th>
-              <th>Ações</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>Plano de mobilidade prioriza transporte público</td>
-              <td>Brasília/DF</td>
-              <td>Cidade, Mobilidade</td>
-              <td><span class="status">Publicada</span></td>
-              <td class="table-actions">
-                <a class="mini-link" href="noticia-crud.html#exibir">Ver</a>
-                <a class="mini-link" href="noticia-crud.html#atualizar">Editar</a>
-                <a class="mini-link danger" href="noticia-crud.html#apagar">Apagar</a>
-              </td>
-            </tr>
-            <tr>
-              <td>Festival reúne música e teatro</td>
-              <td>Vila Velha/ES</td>
-              <td>Cultura, Agenda</td>
-              <td><span class="status pending">Rascunho</span></td>
-              <td class="table-actions">
-                <a class="mini-link" href="noticia-crud.html#exibir">Ver</a>
-                <a class="mini-link" href="noticia-crud.html#atualizar">Editar</a>
-                <a class="mini-link danger" href="noticia-crud.html#apagar">Apagar</a>
-              </td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-    </section>
+        <section class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Titulo</th>
+                <th>Status</th>
+                <th>Data</th>
+                <th>Acoes</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Plano de mobilidade prioriza transporte publico</td>
+                <td><span class="status success">Publicada</span></td>
+                <td>18/04/2026</td>
+                <td class="table-actions">
+                  <a class="button secondary" href="../publico/noticia.html">Ver</a>
+                  <a class="button secondary" href="noticia-crud.html#atualizar">Editar</a>
+                </td>
+              </tr>
+              <tr>
+                <td>Festival ocupa espacos publicos durante tres dias</td>
+                <td><span class="status warning">Rascunho</span></td>
+                <td>17/04/2026</td>
+                <td class="table-actions">
+                  <a class="button secondary" href="noticia-crud.html#exibir">Ver</a>
+                  <a class="button secondary" href="noticia-crud.html#atualizar">Editar</a>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+      </section>
+    </div>
   </main>
+
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div>
+        <strong>Portal Fake News</strong>
+        <p class="note">Projeto academico em HTML e CSS.</p>
+      </div>
+      <div>
+        <strong>Paginas</strong>
+        <p><a href="../publico/noticias.html">Noticias</a></p>
+        <p><a href="noticia-crud.html">CRUD do autor</a></p>
+      </div>
+      <div>
+        <strong>Areas</strong>
+        <p><a href="../leitor/feed.html">Leitor</a></p>
+        <p><a href="../superadmin/dashboard.html">Superadmin</a></p>
+      </div>
+    </div>
+  </footer>
 </body>
 </html>

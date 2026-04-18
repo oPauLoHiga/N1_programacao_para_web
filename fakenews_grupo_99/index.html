@@ -3,134 +3,123 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Fake News | Portal</title>
+  <title>Portal Fake News</title>
   <link rel="stylesheet" href="assets/css/estilo.css">
 </head>
 <body>
   <header class="site-header">
     <div class="container topbar">
-      <a class="brand" href="index.html" aria-label="Fake News">
-        <img src="assets/images/logo.png" alt="Fake News">
-      </a>
-      <nav class="nav" aria-label="Navegação principal">
-        <a class="active" href="index.html">Início</a>
-        <a href="publico/noticias.html">Notícias</a>
+      <a class="brand" href="index.html">Portal <span>Fake News</span></a>
+      <nav class="nav">
+        <a class="active" href="index.html">Inicio</a>
+        <a href="publico/noticias.html">Noticias</a>
+        <a href="publico/login.html">Login</a>
         <a href="leitor/feed.html">Leitor</a>
         <a href="autor/noticias.html">Autor</a>
         <a href="superadmin/dashboard.html">Superadmin</a>
       </nav>
-      <div class="actions">
-        <a class="button-outline" href="publico/login.html">Entrar</a>
-        <a class="button" href="publico/cadastro.html">Criar conta</a>
-      </div>
     </div>
   </header>
 
-  <main>
-    <section class="container hero-news">
-      <a class="top-story" href="publico/noticia.html">
-        <img src="assets/images/noticia-cidade.png" alt="Avenida movimentada no centro da cidade">
-        <div class="top-story-content">
-          <span class="eyebrow">Cidade</span>
-          <h1>Plano de mobilidade prioriza transporte público nos próximos bairros</h1>
-          <p>Prefeitura anuncia corredores de ônibus, ciclovias e novas travessias em áreas de grande circulação.</p>
-          <span class="button">Ler notícia</span>
-        </div>
-      </a>
-    </section>
-
-    <section class="section">
-      <div class="container">
-        <div class="section-title">
-          <div>
-            <span class="eyebrow">Últimas notícias</span>
-            <h2>Destaques do dia</h2>
+  <main class="page">
+    <div class="container">
+      <section class="hero">
+        <div class="hero-content">
+          <p class="note">Destaque principal</p>
+          <h1>Portal simples para noticias, leitor, autor e superadmin</h1>
+          <p>Projeto estatico em HTML e CSS para abrir direto no Live Server.</p>
+          <div class="actions">
+            <a class="button" href="publico/noticia.html">Ler noticia</a>
+            <a class="button secondary" href="publico/noticias.html">Ver todas</a>
           </div>
-          <a class="button-outline" href="publico/noticias.html">Ver todas</a>
         </div>
+      </section>
 
-        <div class="news-grid">
-          <article class="news-card">
-            <img src="assets/images/noticia-saude.png" alt="Atendimento em unidade pública de saúde">
-            <div class="news-card-body">
-              <span class="tag">Saúde</span>
-              <h3>Unidades ampliam vacinação no fim de semana</h3>
-              <p>Postos terão horário estendido e distribuição de senhas por ordem de chegada.</p>
-              <div class="meta">
-                <span>Brasília, DF</span>
-                <span>12/04/2026</span>
+      <section class="section">
+        <div class="section-title">
+          <h2>Noticias em destaque</h2>
+          <p class="note">Cards simples com resumo, data e link.</p>
+        </div>
+        <div class="grid grid-3">
+          <article class="card">
+            <div class="card-body">
+              <div class="tag-row">
+                <span class="tag">Saude</span>
               </div>
-              <a class="mini-link" href="publico/noticia.html">Abrir</a>
+              <h3>Unidades ampliam atendimento no fim de semana</h3>
+              <p class="meta">Brasilia - 18/04/2026</p>
+              <p class="note">Postos vao atender em horario estendido em varias regioes.</p>
+              <a class="button secondary" href="publico/noticia.html">Abrir</a>
             </div>
           </article>
 
-          <article class="news-card">
-            <img src="assets/images/noticia-tecnologia.png" alt="Tela com informações de tecnologia">
-            <div class="news-card-body">
-              <span class="tag">Tecnologia</span>
-              <h3>Laboratório público abre vagas para oficinas digitais</h3>
-              <p>Aulas de programação, segurança digital e edição de conteúdo começam na próxima semana.</p>
-              <div class="meta">
-                <span>Vitória, ES</span>
-                <span>12/04/2026</span>
+          <article class="card">
+            <div class="card-body">
+              <div class="tag-row">
+                <span class="tag">Tecnologia</span>
               </div>
-              <a class="mini-link" href="publico/noticia.html">Abrir</a>
+              <h3>Laboratorio abre oficinas digitais para a comunidade</h3>
+              <p class="meta">Vitoria - 17/04/2026</p>
+              <p class="note">Programacao, seguranca e edicao em uma grade introdutoria.</p>
+              <a class="button secondary" href="publico/noticia.html">Abrir</a>
             </div>
           </article>
 
-          <article class="news-card">
-            <img src="assets/images/noticia-cultura.png" alt="Palco iluminado para apresentação cultural">
-            <div class="news-card-body">
-              <span class="tag">Cultura</span>
-              <h3>Festival reúne música, teatro e gastronomia local</h3>
-              <p>Programação gratuita ocupa praças e centros culturais durante três dias.</p>
-              <div class="meta">
-                <span>Vila Velha, ES</span>
-                <span>11/04/2026</span>
+          <article class="card">
+            <div class="card-body">
+              <div class="tag-row">
+                <span class="tag">Cultura</span>
               </div>
-              <a class="mini-link" href="publico/noticia.html">Abrir</a>
+              <h3>Festival ocupa pracas e centros culturais da cidade</h3>
+              <p class="meta">Vila Velha - 16/04/2026</p>
+              <p class="note">Programacao gratuita com musica, teatro e gastronomia.</p>
+              <a class="button secondary" href="publico/noticia.html">Abrir</a>
             </div>
           </article>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <section class="section section-alt">
-      <div class="container columns">
-        <div>
-          <span class="eyebrow">Categorias</span>
-          <h2>Notícias por interesse</h2>
-          <p class="lead">Acompanhe editorias, salve matérias e encontre publicações por cidade, estado e tag.</p>
+      <section class="section">
+        <div class="section-title">
+          <h2>Acesso rapido</h2>
+          <p class="note">Atalhos para as areas do trabalho.</p>
         </div>
-        <div class="stack">
-          <a class="info-card" href="publico/noticias.html">
-            <h3>Política urbana</h3>
-            <p>Decisões públicas, obras e serviços essenciais.</p>
-          </a>
-          <a class="info-card" href="leitor/feed.html">
-            <h3>Meu feed</h3>
-            <p>Leitura organizada por temas acompanhados.</p>
-          </a>
+        <div class="grid grid-3">
+          <div class="panel">
+            <h3>Area publica</h3>
+            <p>Login, cadastro, listagem e detalhe da noticia.</p>
+            <a class="button" href="publico/login.html">Entrar</a>
+          </div>
+          <div class="panel">
+            <h3>Area do autor</h3>
+            <p>Lista de noticias e pagina de CRUD simples.</p>
+            <a class="button" href="autor/noticias.html">Ir para autor</a>
+          </div>
+          <div class="panel">
+            <h3>Area do superadmin</h3>
+            <p>Painel geral e paginas de UFs, cidades e tags.</p>
+            <a class="button" href="superadmin/dashboard.html">Ir para painel</a>
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
+    </div>
   </main>
 
   <footer class="footer">
     <div class="container footer-grid">
       <div>
-        <strong>Fake News</strong>
-        <p>Portal acadêmico de notícias com áreas públicas, autorais e administrativas.</p>
+        <strong>Portal Fake News</strong>
+        <p class="note">Projeto academico em HTML e CSS.</p>
       </div>
       <div>
-        <strong>Áreas</strong>
-        <p><a href="autor/noticia-crud.html">CRUD de notícias</a></p>
-        <p><a href="superadmin/tag-crud.html">CRUD de tags</a></p>
+        <strong>Paginas</strong>
+        <p><a href="publico/noticias.html">Noticias</a></p>
+        <p><a href="publico/login.html">Login</a></p>
       </div>
       <div>
-        <strong>Acesso</strong>
-        <p><a href="publico/login.html">Entrar</a></p>
-        <p><a href="publico/cadastro.html">Criar conta</a></p>
+        <strong>Areas</strong>
+        <p><a href="autor/noticias.html">Autor</a></p>
+        <p><a href="superadmin/dashboard.html">Superadmin</a></p>
       </div>
     </div>
   </footer>

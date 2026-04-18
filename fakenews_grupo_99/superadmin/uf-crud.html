@@ -3,102 +3,112 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>CRUD de UFs | Fake News</title>
+  <title>CRUD de UFs | Portal Fake News</title>
   <link rel="stylesheet" href="../assets/css/estilo.css">
 </head>
 <body>
   <header class="site-header">
     <div class="container topbar">
-      <a class="brand" href="../index.html"><img src="../assets/images/logo.png" alt="Fake News"></a>
-      <nav class="nav" aria-label="Navegação principal">
-        <a href="../index.html">Início</a>
-        <a href="../publico/noticias.html">Notícias</a>
-        <a href="../autor/noticias.html">Autor</a>
-        <a class="active" href="dashboard.html">Superadmin</a>
+      <a class="brand" href="../index.html">Portal <span>Fake News</span></a>
+      <nav class="nav">
+        <a href="../index.html">Inicio</a>
+        <a href="../publico/noticias.html">Noticias</a>
+        <a class="active" href="uf-crud.html">UFs</a>
       </nav>
     </div>
   </header>
 
-  <main class="container dashboard">
-    <aside class="side-nav">
-      <a href="dashboard.html">Dashboard</a>
-      <a class="active" href="#listar">Listar UFs</a>
-      <a href="#criar">Criar</a>
-      <a href="#exibir">Exibir</a>
-      <a href="#atualizar">Atualizar</a>
-      <a href="#apagar">Apagar</a>
-      <a href="cidade-crud.html#listar">Cidades</a>
-      <a href="tag-crud.html#listar">Tags</a>
-    </aside>
+  <main class="page">
+    <div class="container layout">
+      <aside class="sidebar">
+        <a href="dashboard.html">Dashboard</a>
+        <a class="active" href="uf-crud.html">UFs</a>
+        <a href="cidade-crud.html">Cidades</a>
+        <a href="tag-crud.html">Tags</a>
+      </aside>
 
-    <section class="content-area">
-      <section id="listar" class="panel">
-        <span class="eyebrow">Listar todos</span>
-        <h1>UFs cadastradas</h1>
-        <div class="table-wrap">
+      <section class="content">
+        <section class="panel">
+          <h1>CRUD de UFs</h1>
+          <p class="note">Pagina unica com listagem e formulario simples.</p>
+        </section>
+
+        <section class="table-wrap">
           <table>
-            <thead><tr><th>ID</th><th>Nome</th><th>Sigla</th><th>Cidades</th><th>Ações</th></tr></thead>
+            <thead>
+              <tr>
+                <th>ID</th>
+                <th>Sigla</th>
+                <th>Nome</th>
+                <th>Acoes</th>
+              </tr>
+            </thead>
             <tbody>
               <tr>
                 <td>1</td>
-                <td>Distrito Federal</td>
                 <td>DF</td>
-                <td>1</td>
-                <td class="table-actions"><a class="mini-link" href="#exibir">Exibir</a><a class="mini-link" href="#atualizar">Atualizar</a><a class="mini-link danger" href="#apagar">Apagar</a></td>
+                <td>Distrito Federal</td>
+                <td class="table-actions">
+                  <a class="button secondary" href="#editar">Editar</a>
+                  <a class="button secondary" href="#apagar">Excluir</a>
+                </td>
               </tr>
               <tr>
                 <td>2</td>
-                <td>Espírito Santo</td>
                 <td>ES</td>
-                <td>3</td>
-                <td class="table-actions"><a class="mini-link" href="#exibir">Exibir</a><a class="mini-link" href="#atualizar">Atualizar</a><a class="mini-link danger" href="#apagar">Apagar</a></td>
+                <td>Espirito Santo</td>
+                <td class="table-actions">
+                  <a class="button secondary" href="#editar">Editar</a>
+                  <a class="button secondary" href="#apagar">Excluir</a>
+                </td>
               </tr>
             </tbody>
           </table>
-        </div>
-      </section>
+        </section>
 
-      <section id="criar" class="panel">
-        <span class="eyebrow">Criar</span>
-        <h2>Cadastrar UF</h2>
-        <form class="form-grid" action="#listar">
-          <div class="form-row">
-            <div class="field"><label for="nome">Nome</label><input id="nome" type="text" placeholder="Ex.: Goiás"></div>
-            <div class="field"><label for="sigla">Sigla</label><input id="sigla" type="text" maxlength="2" placeholder="GO"></div>
+        <section class="panel" id="editar">
+          <h2>Salvar ou editar UF</h2>
+          <form class="form-row">
+            <div class="field">
+              <label for="sigla">Sigla</label>
+              <input id="sigla" type="text" value="SP">
+            </div>
+            <div class="field">
+              <label for="nome">Nome</label>
+              <input id="nome" type="text" value="Sao Paulo">
+            </div>
+          </form>
+          <div class="actions">
+            <a class="button" href="#editar">Salvar UF</a>
           </div>
-          <button class="button" type="submit">Salvar UF</button>
-        </form>
-      </section>
+        </section>
 
-      <section id="exibir" class="panel">
-        <span class="eyebrow">Exibir</span>
-        <h2>Distrito Federal (DF)</h2>
-        <p>ID: 1</p>
-        <p>Cidades vinculadas: Brasília.</p>
+        <section class="panel" id="apagar">
+          <h2>Excluir UF</h2>
+          <p>Registro selecionado: ES - Espirito Santo.</p>
+          <a class="button danger" href="#apagar">Confirmar exclusao</a>
+        </section>
       </section>
-
-      <section id="atualizar" class="panel">
-        <span class="eyebrow">Atualizar</span>
-        <h2>Editar UF</h2>
-        <form class="form-grid" action="#listar">
-          <div class="form-row">
-            <div class="field"><label for="nome-editar">Nome</label><input id="nome-editar" type="text" value="Distrito Federal"></div>
-            <div class="field"><label for="sigla-editar">Sigla</label><input id="sigla-editar" type="text" maxlength="2" value="DF"></div>
-          </div>
-          <button class="button" type="submit">Atualizar UF</button>
-        </form>
-      </section>
-
-      <section id="apagar" class="panel">
-        <span class="eyebrow">Apagar</span>
-        <h2>Remover UF</h2>
-        <p>Confirme a remoção de Distrito Federal. UFs com cidades vinculadas precisam ser revisadas antes da exclusão.</p>
-        <div class="actions">
-          <a class="button-danger" href="#listar">Confirmar remoção</a>
-          <a class="button-outline" href="#listar">Cancelar</a>
-        </div>
-      </section>
-    </section>
+    </div>
   </main>
+
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div>
+        <strong>Portal Fake News</strong>
+        <p class="note">Projeto academico em HTML e CSS.</p>
+      </div>
+      <div>
+        <strong>Paginas</strong>
+        <p><a href="dashboard.html">Dashboard</a></p>
+        <p><a href="cidade-crud.html">Cidades</a></p>
+      </div>
+      <div>
+        <strong>Areas</strong>
+        <p><a href="../publico/noticias.html">Noticias</a></p>
+        <p><a href="../autor/noticias.html">Autor</a></p>
+      </div>
+    </div>
+  </footer>
 </body>
 </html>

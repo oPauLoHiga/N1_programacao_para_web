@@ -3,61 +3,79 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Superadmin | Fake News</title>
+  <title>Dashboard | Portal Fake News</title>
   <link rel="stylesheet" href="../assets/css/estilo.css">
 </head>
 <body>
   <header class="site-header">
     <div class="container topbar">
-      <a class="brand" href="../index.html"><img src="../assets/images/logo.png" alt="Fake News"></a>
-      <nav class="nav" aria-label="Navegação principal">
-        <a href="../index.html">Início</a>
-        <a href="../publico/noticias.html">Notícias</a>
-        <a href="../leitor/feed.html">Leitor</a>
+      <a class="brand" href="../index.html">Portal <span>Fake News</span></a>
+      <nav class="nav">
+        <a href="../index.html">Inicio</a>
+        <a href="../publico/noticias.html">Noticias</a>
         <a href="../autor/noticias.html">Autor</a>
         <a class="active" href="dashboard.html">Superadmin</a>
       </nav>
     </div>
   </header>
 
-  <main class="container dashboard">
-    <aside class="side-nav">
-      <a class="active" href="dashboard.html">Dashboard</a>
-      <a href="uf-crud.html#listar">UFs</a>
-      <a href="cidade-crud.html#listar">Cidades</a>
-      <a href="tag-crud.html#listar">Tags</a>
-      <a href="../autor/noticia-crud.html#listar">Notícias</a>
-    </aside>
+  <main class="page">
+    <div class="container layout">
+      <aside class="sidebar">
+        <a class="active" href="dashboard.html">Dashboard</a>
+        <a href="uf-crud.html">UFs</a>
+        <a href="cidade-crud.html">Cidades</a>
+        <a href="tag-crud.html">Tags</a>
+      </aside>
 
-    <section class="content-area">
-      <div>
-        <span class="eyebrow">Superadmin</span>
-        <h1>Painel geral</h1>
-        <p class="lead">Cadastros base do portal, publicação de notícias e organização por UF, cidade e tag.</p>
-      </div>
+      <section class="content">
+        <div class="section-title">
+          <h1>Dashboard do superadmin</h1>
+          <p class="note">Visao geral com atalhos para os cadastros principais.</p>
+        </div>
 
-      <div class="metric-grid">
-        <a class="metric-card" href="uf-crud.html#listar"><span class="hint">UFs</span><strong>2</strong></a>
-        <a class="metric-card" href="cidade-crud.html#listar"><span class="hint">Cidades</span><strong>5</strong></a>
-        <a class="metric-card" href="../autor/noticia-crud.html#listar"><span class="hint">Notícias</span><strong>18</strong></a>
-        <a class="metric-card" href="tag-crud.html#listar"><span class="hint">Tags</span><strong>9</strong></a>
-      </div>
+        <div class="stats">
+          <div class="stat"><span class="note">UFs</span><strong>27</strong></div>
+          <div class="stat"><span class="note">Cidades</span><strong>30</strong></div>
+          <div class="stat"><span class="note">Tags</span><strong>10</strong></div>
+          <div class="stat"><span class="note">Noticias</span><strong>30</strong></div>
+        </div>
 
-      <div class="news-grid">
-        <a class="info-card" href="uf-crud.html#criar">
-          <h3>Cadastrar UF</h3>
-          <p>Nome e sigla usados no cadastro de cidades.</p>
-        </a>
-        <a class="info-card" href="cidade-crud.html#criar">
-          <h3>Cadastrar cidade</h3>
-          <p>Cidade vinculada a uma UF existente.</p>
-        </a>
-        <a class="info-card" href="tag-crud.html#criar">
-          <h3>Cadastrar tag</h3>
-          <p>Categoria de assunto usada nas notícias.</p>
-        </a>
-      </div>
-    </section>
+        <div class="grid grid-3">
+          <a class="panel" href="uf-crud.html">
+            <h3>CRUD de UFs</h3>
+            <p class="note">Cadastro basico de estados.</p>
+          </a>
+          <a class="panel" href="cidade-crud.html">
+            <h3>CRUD de cidades</h3>
+            <p class="note">Vinculo entre cidade e UF.</p>
+          </a>
+          <a class="panel" href="tag-crud.html">
+            <h3>CRUD de tags</h3>
+            <p class="note">Categorias para as noticias.</p>
+          </a>
+        </div>
+      </section>
+    </div>
   </main>
+
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div>
+        <strong>Portal Fake News</strong>
+        <p class="note">Projeto academico em HTML e CSS.</p>
+      </div>
+      <div>
+        <strong>Paginas</strong>
+        <p><a href="uf-crud.html">UFs</a></p>
+        <p><a href="cidade-crud.html">Cidades</a></p>
+      </div>
+      <div>
+        <strong>Areas</strong>
+        <p><a href="../publico/noticias.html">Noticias</a></p>
+        <p><a href="../autor/noticias.html">Autor</a></p>
+      </div>
+    </div>
+  </footer>
 </body>
 </html>

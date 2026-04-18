@@ -3,31 +3,34 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Entrar | Fake News</title>
+  <title>Login | Portal Fake News</title>
   <link rel="stylesheet" href="../assets/css/estilo.css">
 </head>
 <body>
   <header class="site-header">
     <div class="container topbar">
-      <a class="brand" href="../index.html"><img src="../assets/images/logo.png" alt="Fake News"></a>
-      <nav class="nav" aria-label="Navegação principal">
-        <a href="../index.html">Início</a>
-        <a href="noticias.html">Notícias</a>
+      <a class="brand" href="../index.html">Portal <span>Fake News</span></a>
+      <nav class="nav">
+        <a href="../index.html">Inicio</a>
+        <a href="noticias.html">Noticias</a>
+        <a class="active" href="login.html">Login</a>
         <a href="../leitor/feed.html">Leitor</a>
-        <a href="../autor/noticias.html">Autor</a>
-        <a href="../superadmin/dashboard.html">Superadmin</a>
       </nav>
     </div>
   </header>
 
-  <main>
-    <section class="section section-alt">
-      <div class="container columns">
-        <div>
-          <span class="eyebrow">Acesso</span>
-          <h1>Entre para acompanhar suas notícias</h1>
-          <p class="lead">Use seu e-mail para continuar a leitura, comentar e salvar matérias.</p>
-        </div>
+  <main class="page">
+    <div class="container">
+      <div class="grid grid-2">
+        <section class="panel">
+          <h1>Entrar no portal</h1>
+          <p class="note">Fluxo simples de login para seguir para a area do leitor.</p>
+          <div class="actions">
+            <a class="button secondary" href="cadastro.html">Criar conta</a>
+            <a class="button secondary" href="noticias.html">Ver noticias</a>
+          </div>
+        </section>
+
         <form class="panel form-grid" action="../leitor/feed.html">
           <div class="field">
             <label for="email">E-mail</label>
@@ -35,20 +38,33 @@
           </div>
           <div class="field">
             <label for="senha">Senha</label>
-            <input id="senha" name="senha" type="password" placeholder="Sua senha">
+            <input id="senha" name="senha" type="password" placeholder="Digite sua senha">
           </div>
-          <button class="button" type="submit">Entrar</button>
-          <p class="hint">Ainda não tem conta? <a class="mini-link" href="cadastro.html">Criar conta</a></p>
+          <div class="actions">
+            <button class="button" type="submit">Entrar</button>
+            <a class="button secondary" href="cadastro.html">Cadastro</a>
+          </div>
         </form>
       </div>
-    </section>
+    </div>
   </main>
 
   <footer class="footer">
     <div class="container footer-grid">
-      <p>Fake News</p>
-      <p><a href="cadastro.html">Criar conta</a></p>
-      <p><a href="../index.html">Início</a></p>
+      <div>
+        <strong>Portal Fake News</strong>
+        <p class="note">Projeto academico em HTML e CSS.</p>
+      </div>
+      <div>
+        <strong>Paginas</strong>
+        <p><a href="noticias.html">Noticias</a></p>
+        <p><a href="cadastro.html">Cadastro</a></p>
+      </div>
+      <div>
+        <strong>Areas</strong>
+        <p><a href="../leitor/feed.html">Leitor</a></p>
+        <p><a href="../autor/noticias.html">Autor</a></p>
+      </div>
     </div>
   </footer>
 </body>

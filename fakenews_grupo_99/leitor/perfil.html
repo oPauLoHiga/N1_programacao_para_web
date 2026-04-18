@@ -3,88 +3,84 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Perfil do leitor | Fake News</title>
+  <title>Perfil do leitor | Portal Fake News</title>
   <link rel="stylesheet" href="../assets/css/estilo.css">
 </head>
 <body>
   <header class="site-header">
     <div class="container topbar">
-      <a class="brand" href="../index.html"><img src="../assets/images/logo.png" alt="Fake News"></a>
-      <nav class="nav" aria-label="Navegação principal">
-        <a href="../index.html">Início</a>
-        <a href="../publico/noticias.html">Notícias</a>
-        <a class="active" href="feed.html">Leitor</a>
-        <a href="../autor/noticias.html">Autor</a>
-        <a href="../superadmin/dashboard.html">Superadmin</a>
+      <a class="brand" href="../index.html">Portal <span>Fake News</span></a>
+      <nav class="nav">
+        <a href="../index.html">Inicio</a>
+        <a href="../publico/noticias.html">Noticias</a>
+        <a class="active" href="perfil.html">Perfil</a>
       </nav>
     </div>
   </header>
 
-  <main>
-    <section class="section">
-      <div class="container columns">
-        <form class="panel form-grid" action="feed.html">
-          <span class="eyebrow">Perfil</span>
-          <h1>Dados do leitor</h1>
-          <div class="profile-row">
-            <img class="avatar" src="../assets/images/perfis/user2.png" alt="Rafael Moraes">
-            <div>
-              <strong>Rafael Moraes</strong>
-              <p class="hint">Leitor ativo desde abril de 2026.</p>
-            </div>
-          </div>
-          <div class="form-row">
-            <div class="field">
-              <label for="nome">Nome</label>
-              <input id="nome" name="nome" type="text" value="Rafael Moraes">
-            </div>
-            <div class="field">
-              <label for="cidade">Cidade</label>
-              <input id="cidade" name="cidade" type="text" value="Brasília">
-            </div>
-          </div>
-          <div class="field">
-            <label for="email">E-mail</label>
-            <input id="email" name="email" type="email" value="rafael@email.com">
-          </div>
-          <fieldset class="choice-group">
-            <legend>Preferências</legend>
-            <div class="choice-grid">
-              <label class="choice"><input type="checkbox" checked> Cidade</label>
-              <label class="choice"><input type="checkbox" checked> Saúde</label>
-              <label class="choice"><input type="checkbox" checked> Tecnologia</label>
-              <label class="choice"><input type="checkbox"> Cultura</label>
-              <label class="choice"><input type="checkbox"> Política</label>
-              <label class="choice"><input type="checkbox"> Educação</label>
-            </div>
-          </fieldset>
-          <button class="button" type="submit">Salvar perfil</button>
-        </form>
+  <main class="page">
+    <div class="container layout">
+      <aside class="sidebar">
+        <a href="feed.html">Meu feed</a>
+        <a class="active" href="perfil.html">Meu perfil</a>
+      </aside>
 
-        <aside class="stack">
-          <div class="metric-card">
-            <span class="hint">Matérias salvas</span>
-            <strong>8</strong>
+      <section class="content">
+        <section class="panel">
+          <h1>Perfil do leitor</h1>
+          <p class="note">Informacoes basicas e preferencias de leitura.</p>
+          <h2>Ana Souza</h2>
+          <p class="note">Perfil simples sem imagem ou avatar.</p>
+          <div class="form-grid">
+            <div class="form-row">
+              <div class="field">
+                <label>Nome</label>
+                <input type="text" value="Ana Souza">
+              </div>
+              <div class="field">
+                <label>E-mail</label>
+                <input type="email" value="ana@email.com">
+              </div>
+            </div>
+            <div class="field">
+              <label>Bio</label>
+              <textarea>Leitora interessada em cidade, saude e tecnologia.</textarea>
+            </div>
+            <div class="actions">
+              <a class="button" href="perfil.html">Salvar</a>
+            </div>
           </div>
-          <div class="metric-card">
-            <span class="hint">Comentários enviados</span>
-            <strong>3</strong>
+        </section>
+
+        <section class="panel">
+          <h2>Interacoes</h2>
+          <div class="stats">
+            <div class="stat"><span class="note">Comentarios</span><strong>8</strong></div>
+            <div class="stat"><span class="note">Noticias salvas</span><strong>5</strong></div>
+            <div class="stat"><span class="note">Categorias</span><strong>4</strong></div>
+            <div class="stat"><span class="note">Ultimo acesso</span><strong>Hoje</strong></div>
           </div>
-          <div class="panel">
-            <h2>Últimos comentários</h2>
-            <p>“Essa rota ajudaria muito quem depende do ônibus.”</p>
-            <p>“Ótima notícia para as oficinas digitais.”</p>
-          </div>
-        </aside>
-      </div>
-    </section>
+        </section>
+      </section>
+    </div>
   </main>
 
   <footer class="footer">
     <div class="container footer-grid">
-      <p>Fake News</p>
-      <p><a href="feed.html">Meu feed</a></p>
-      <p><a href="../index.html">Sair</a></p>
+      <div>
+        <strong>Portal Fake News</strong>
+        <p class="note">Projeto academico em HTML e CSS.</p>
+      </div>
+      <div>
+        <strong>Paginas</strong>
+        <p><a href="feed.html">Meu feed</a></p>
+        <p><a href="../publico/noticias.html">Noticias</a></p>
+      </div>
+      <div>
+        <strong>Areas</strong>
+        <p><a href="../autor/noticias.html">Autor</a></p>
+        <p><a href="../superadmin/dashboard.html">Superadmin</a></p>
+      </div>
     </div>
   </footer>
 </body>

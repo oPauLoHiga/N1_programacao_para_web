@@ -3,95 +3,112 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>CRUD de tags | Fake News</title>
+  <title>CRUD de tags | Portal Fake News</title>
   <link rel="stylesheet" href="../assets/css/estilo.css">
 </head>
 <body>
   <header class="site-header">
     <div class="container topbar">
-      <a class="brand" href="../index.html"><img src="../assets/images/logo.png" alt="Fake News"></a>
-      <nav class="nav" aria-label="Navegação principal">
-        <a href="../index.html">Início</a>
-        <a href="../publico/noticias.html">Notícias</a>
-        <a href="../autor/noticias.html">Autor</a>
-        <a class="active" href="dashboard.html">Superadmin</a>
+      <a class="brand" href="../index.html">Portal <span>Fake News</span></a>
+      <nav class="nav">
+        <a href="../index.html">Inicio</a>
+        <a href="../publico/noticias.html">Noticias</a>
+        <a class="active" href="tag-crud.html">Tags</a>
       </nav>
     </div>
   </header>
 
-  <main class="container dashboard">
-    <aside class="side-nav">
-      <a href="dashboard.html">Dashboard</a>
-      <a href="uf-crud.html#listar">UFs</a>
-      <a href="cidade-crud.html#listar">Cidades</a>
-      <a class="active" href="#listar">Listar tags</a>
-      <a href="#criar">Criar</a>
-      <a href="#exibir">Exibir</a>
-      <a href="#atualizar">Atualizar</a>
-      <a href="#apagar">Apagar</a>
-    </aside>
+  <main class="page">
+    <div class="container layout">
+      <aside class="sidebar">
+        <a href="dashboard.html">Dashboard</a>
+        <a href="uf-crud.html">UFs</a>
+        <a href="cidade-crud.html">Cidades</a>
+        <a class="active" href="tag-crud.html">Tags</a>
+      </aside>
 
-    <section class="content-area">
-      <section id="listar" class="panel">
-        <span class="eyebrow">Listar todos</span>
-        <h1>Tags cadastradas</h1>
-        <div class="table-wrap">
+      <section class="content">
+        <section class="panel">
+          <h1>CRUD de tags</h1>
+          <p class="note">Categorias usadas para organizar as materias.</p>
+        </section>
+
+        <section class="table-wrap">
           <table>
-            <thead><tr><th>ID</th><th>Nome</th><th>Notícias</th><th>Ações</th></tr></thead>
+            <thead>
+              <tr>
+                <th>ID</th>
+                <th>Nome</th>
+                <th>Slug</th>
+                <th>Acoes</th>
+              </tr>
+            </thead>
             <tbody>
               <tr>
                 <td>1</td>
-                <td>Cidade</td>
-                <td>6</td>
-                <td class="table-actions"><a class="mini-link" href="#exibir">Exibir</a><a class="mini-link" href="#atualizar">Atualizar</a><a class="mini-link danger" href="#apagar">Apagar</a></td>
+                <td>Saude</td>
+                <td>saude</td>
+                <td class="table-actions">
+                  <a class="button secondary" href="#editar">Editar</a>
+                  <a class="button secondary" href="#apagar">Excluir</a>
+                </td>
               </tr>
               <tr>
                 <td>2</td>
                 <td>Tecnologia</td>
-                <td>4</td>
-                <td class="table-actions"><a class="mini-link" href="#exibir">Exibir</a><a class="mini-link" href="#atualizar">Atualizar</a><a class="mini-link danger" href="#apagar">Apagar</a></td>
+                <td>tecnologia</td>
+                <td class="table-actions">
+                  <a class="button secondary" href="#editar">Editar</a>
+                  <a class="button secondary" href="#apagar">Excluir</a>
+                </td>
               </tr>
             </tbody>
           </table>
-        </div>
-      </section>
+        </section>
 
-      <section id="criar" class="panel">
-        <span class="eyebrow">Criar</span>
-        <h2>Cadastrar tag</h2>
-        <form class="form-grid" action="#listar">
-          <div class="field"><label for="nome">Nome da tag</label><input id="nome" type="text" placeholder="Ex.: Educação"></div>
-          <button class="button" type="submit">Salvar tag</button>
-        </form>
-      </section>
+        <section class="panel" id="editar">
+          <h2>Salvar ou editar tag</h2>
+          <form class="form-row">
+            <div class="field">
+              <label for="nome-tag">Nome</label>
+              <input id="nome-tag" type="text" value="Politica">
+            </div>
+            <div class="field">
+              <label for="slug-tag">Slug</label>
+              <input id="slug-tag" type="text" value="politica">
+            </div>
+          </form>
+          <div class="actions">
+            <a class="button" href="#editar">Salvar tag</a>
+          </div>
+        </section>
 
-      <section id="exibir" class="panel">
-        <span class="eyebrow">Exibir</span>
-        <h2>Cidade</h2>
-        <p>ID: 1</p>
-        <p>Notícias vinculadas: 6.</p>
-        <div class="tag-list"><span class="tag">Cidade</span></div>
+        <section class="panel" id="apagar">
+          <h2>Excluir tag</h2>
+          <p>Registro selecionado: Tecnologia.</p>
+          <a class="button danger" href="#apagar">Confirmar exclusao</a>
+        </section>
       </section>
-
-      <section id="atualizar" class="panel">
-        <span class="eyebrow">Atualizar</span>
-        <h2>Editar tag</h2>
-        <form class="form-grid" action="#listar">
-          <div class="field"><label for="nome-editar">Nome da tag</label><input id="nome-editar" type="text" value="Cidade"></div>
-          <button class="button" type="submit">Atualizar tag</button>
-        </form>
-      </section>
-
-      <section id="apagar" class="panel">
-        <span class="eyebrow">Apagar</span>
-        <h2>Remover tag</h2>
-        <p>Confirme a remoção da tag Cidade. Notícias vinculadas ficarão sem essa classificação.</p>
-        <div class="actions">
-          <a class="button-danger" href="#listar">Confirmar remoção</a>
-          <a class="button-outline" href="#listar">Cancelar</a>
-        </div>
-      </section>
-    </section>
+    </div>
   </main>
+
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div>
+        <strong>Portal Fake News</strong>
+        <p class="note">Projeto academico em HTML e CSS.</p>
+      </div>
+      <div>
+        <strong>Paginas</strong>
+        <p><a href="dashboard.html">Dashboard</a></p>
+        <p><a href="uf-crud.html">UFs</a></p>
+      </div>
+      <div>
+        <strong>Areas</strong>
+        <p><a href="../publico/noticias.html">Noticias</a></p>
+        <p><a href="../autor/noticias.html">Autor</a></p>
+      </div>
+    </div>
+  </footer>
 </body>
 </html>

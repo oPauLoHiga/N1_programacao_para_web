@@ -3,89 +3,103 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Meu feed | Fake News</title>
+  <title>Feed do leitor | Portal Fake News</title>
   <link rel="stylesheet" href="../assets/css/estilo.css">
 </head>
 <body>
   <header class="site-header">
     <div class="container topbar">
-      <a class="brand" href="../index.html"><img src="../assets/images/logo.png" alt="Fake News"></a>
-      <nav class="nav" aria-label="Navegação principal">
-        <a href="../index.html">Início</a>
-        <a href="../publico/noticias.html">Notícias</a>
+      <a class="brand" href="../index.html">Portal <span>Fake News</span></a>
+      <nav class="nav">
+        <a href="../index.html">Inicio</a>
+        <a href="../publico/noticias.html">Noticias</a>
         <a class="active" href="feed.html">Leitor</a>
         <a href="../autor/noticias.html">Autor</a>
-        <a href="../superadmin/dashboard.html">Superadmin</a>
       </nav>
-      <div class="actions">
-        <a class="button-outline" href="perfil.html">Meu perfil</a>
-      </div>
     </div>
   </header>
 
-  <main>
-    <section class="page-header">
-      <div class="container">
-        <div class="crumbs">Leitor / Feed</div>
-        <h1>Notícias para você</h1>
-        <p class="lead">Matérias salvas, temas acompanhados e histórico recente de leitura.</p>
-      </div>
-    </section>
+  <main class="page">
+    <div class="container layout">
+      <aside class="sidebar">
+        <a class="active" href="feed.html">Meu feed</a>
+        <a href="perfil.html">Meu perfil</a>
+        <a href="../publico/noticias.html">Noticias publicas</a>
+        <a href="../publico/login.html">Sair</a>
+      </aside>
 
-    <section class="section">
-      <div class="container columns">
-        <div class="stack">
-          <article class="news-card">
-            <img src="../assets/images/noticia-tecnologia.png" alt="Conteúdo de tecnologia">
-            <div class="news-card-body">
-              <span class="tag">Tecnologia</span>
-              <h3>Laboratório público abre vagas para oficinas digitais</h3>
-              <p>Aulas de programação, segurança digital e edição de conteúdo começam na próxima semana.</p>
-              <div class="meta"><span>Salva hoje</span><span>4 min de leitura</span></div>
-              <a class="mini-link" href="../publico/noticia.html">Continuar lendo</a>
+      <section class="content">
+        <div class="section-title">
+          <h1>Feed do leitor</h1>
+          <p class="note">Noticias recentes e acessos salvos.</p>
+        </div>
+
+        <div class="grid grid-2">
+          <article class="card">
+            <div class="card-body">
+              <span class="tag">Saude</span>
+              <h3>Atendimento ampliado em unidades de referencia</h3>
+              <p class="meta">Salva para leitura posterior</p>
+              <a class="button secondary" href="../publico/noticia.html">Abrir noticia</a>
             </div>
           </article>
-          <article class="news-card">
-            <img src="../assets/images/noticia-saude.png" alt="Conteúdo de saúde">
-            <div class="news-card-body">
-              <span class="tag">Saúde</span>
-              <h3>Unidades ampliam vacinação no fim de semana</h3>
-              <p>Postos terão horário estendido e equipes extras para atendimento.</p>
-              <div class="meta"><span>Recomendação</span><span>3 min de leitura</span></div>
-              <a class="mini-link" href="../publico/noticia.html">Abrir</a>
+
+          <article class="card">
+            <div class="card-body">
+              <span class="tag">Tecnologia</span>
+              <h3>Oficinas digitais tem novas vagas disponiveis</h3>
+              <p class="meta">Tema acompanhado pelo leitor</p>
+              <a class="button secondary" href="../publico/noticia.html">Abrir noticia</a>
             </div>
           </article>
         </div>
 
-        <aside class="stack">
-          <div class="panel">
-            <h2>Leitor</h2>
-            <div class="profile-row">
-              <img class="avatar" src="../assets/images/perfis/user2.png" alt="Rafael Moraes">
-              <div>
-                <strong>Rafael Moraes</strong>
-                <p class="hint">Acompanha Cidade, Saúde e Tecnologia.</p>
-              </div>
-            </div>
+        <section class="panel">
+          <h2>Comentarios recentes</h2>
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>Noticia</th>
+                  <th>Comentario</th>
+                  <th>Data</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Plano de mobilidade prioriza transporte publico</td>
+                  <td>Gostei do resumo e quero acompanhar as proximas etapas.</td>
+                  <td>18/04/2026</td>
+                </tr>
+                <tr>
+                  <td>Festival ocupa espacos publicos</td>
+                  <td>Seria bom ver mais detalhes por bairro.</td>
+                  <td>17/04/2026</td>
+                </tr>
+              </tbody>
+            </table>
           </div>
-          <div class="panel">
-            <h2>Tags acompanhadas</h2>
-            <div class="tag-list">
-              <span class="tag">Cidade</span>
-              <span class="tag">Saúde</span>
-              <span class="tag">Tecnologia</span>
-            </div>
-          </div>
-        </aside>
-      </div>
-    </section>
+        </section>
+      </section>
+    </div>
   </main>
 
   <footer class="footer">
     <div class="container footer-grid">
-      <p>Fake News</p>
-      <p><a href="perfil.html">Meu perfil</a></p>
-      <p><a href="../publico/noticias.html">Notícias</a></p>
+      <div>
+        <strong>Portal Fake News</strong>
+        <p class="note">Projeto academico em HTML e CSS.</p>
+      </div>
+      <div>
+        <strong>Paginas</strong>
+        <p><a href="../publico/noticias.html">Noticias</a></p>
+        <p><a href="perfil.html">Perfil</a></p>
+      </div>
+      <div>
+        <strong>Areas</strong>
+        <p><a href="../autor/noticias.html">Autor</a></p>
+        <p><a href="../superadmin/dashboard.html">Superadmin</a></p>
+      </div>
     </div>
   </footer>
 </body>
