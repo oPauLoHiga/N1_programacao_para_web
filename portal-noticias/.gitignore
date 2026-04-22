@@ -1,7 +1,26 @@
+# Sistema operacional e editores
 .DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Variaveis locais
 .env
+.env.*
+
+# Dependencias
 /node_modules/
 
-# React Router
+# Build e cache
 /.react-router/
 /build/
+/dist/
+/coverage/
+*.tsbuildinfo
+
+# Logs temporarios
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
