@@ -1,0 +1,15 @@
+export const paths = {
+  home: "/",
+  login: "/login",
+  register: "/cadastro",
+  news: "/noticias",
+  article: "/noticias/mobilidade",
+  readerFeed: "/leitor/feed",
+  readerProfile: "/leitor/perfil",
+  authorNews: "/autor/noticias",
+  authorCrud: "/autor/noticias/crud",
+  adminDashboard: "/superadmin",
+  adminUfs: "/superadmin/ufs",
+  adminCities: "/superadmin/cidades",
+  adminTags: "/superadmin/tags",
+} as const;
