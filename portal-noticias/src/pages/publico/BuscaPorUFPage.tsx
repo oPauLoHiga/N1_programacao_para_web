@@ -1,39 +1,57 @@
-import { useParams } from "react-router";
+import { Link, useParams } from "react-router";
 
 import { MainLayout } from "~/components/layout/MainLayout";
-import { NewsCard } from "~/components/ui/NewsCard";
-import { SectionTitle } from "~/components/ui/SectionTitle";
+import { Breadcrumb } from "~/components/ui/Breadcrumb";
+import { NoticiaCard } from "~/components/ui/NoticiaCard";
 import { getNoticiasPorUf } from "~/data/noticias";
+import { ufs } from "~/data/ufs";
 import { paths } from "~/lib/paths";
 
 export default function BuscaPorUFPage() {
   const { sigla = "" } = useParams();
   const lista = getNoticiasPorUf(sigla);
+  const ufNome = ufs.find((u) => u.sigla.toUpperCase() === sigla.toUpperCase())?.nome ?? sigla;
 
   return (
     <MainLayout>
       <div className="container">
-        <SectionTitle
-          note={`Resultados para UF ${sigla.toUpperCase() || "?"}.`}
-          title="Busca por UF"
+        <Breadcrumb
+          items={[
+            { label: "Home", to: paths.home },
+            { label: "Busca por UF" },
+            { label: ufNome },
+          ]}
         />
-        {lista.length === 0 ? (
-          <p className="note">Nenhuma noticia mockada para esta UF.</p>
-        ) : (
-          <div className="grid grid-3">
-            {lista.map((n) => (
-              <NewsCard
-                key={n.id}
-                tag={n.tags[0] ?? "geral"}
-                title={n.titulo}
-                meta={n.meta}
-                note={n.resumo}
-                linkLabel="Ler"
-                to={paths.noticia(n.id)}
-              />
-            ))}
+
+        <div className="busca-uf-layout">
+          <div>
+            <h1>
+              {ufNome} <span className="note">({lista.length} notícias)</span>
+            </h1>
+            {lista.length === 0 ? (
+              <p className="note">Nenhuma notícia mockada para esta UF.</p>
+            ) : (
+              <div className="grid grid-3">
+                {lista.map((n) => (
+                  <NoticiaCard key={n.id} noticia={n} />
+                ))}
+              </div>
+            )}
           </div>
-        )}
+
+          <aside className="busca-uf-sidebar">
+            <h3>UFs</h3>
+            {ufs.map((u) => (
+              <Link
+                key={u.id}
+                className={u.sigla.toUpperCase() === sigla.toUpperCase() ? "is-active" : ""}
+                to={paths.buscaUf(u.sigla)}
+              >
+                {u.sigla} — {u.nome}
+              </Link>
+            ))}
+          </aside>
+        </div>
       </div>
     </MainLayout>
   );

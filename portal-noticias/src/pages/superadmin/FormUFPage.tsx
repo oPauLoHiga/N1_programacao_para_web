@@ -4,6 +4,7 @@ import { useNavigate, useParams } from "react-router";
 import { MainLayout } from "~/components/layout/MainLayout";
 import { Sidebar } from "~/components/layout/Sidebar";
 import { Button } from "~/components/ui/Button";
+import { InputField } from "~/components/ui/InputField";
 import { getUfPorId } from "~/data/ufs";
 import { adminSidebar } from "~/lib/admin-nav";
 import { paths } from "~/lib/paths";
@@ -23,22 +24,16 @@ export default function FormUFPage() {
     <MainLayout>
       <Sidebar items={adminSidebar}>
         <section className="panel">
-          <h1>{isNova ? "Nova UF" : "Editar UF"}</h1>
+          <h1>
+            {isNova ? "Nova UF" : `Editar UF — ${registro?.sigla ?? ""}`}
+          </h1>
           <form className="form-grid" onSubmit={handleSubmit}>
-            <div className="form-row">
-              <div className="field">
-                <label htmlFor="sigla">Sigla</label>
-                <input defaultValue={registro?.sigla ?? ""} id="sigla" type="text" />
-              </div>
-              <div className="field">
-                <label htmlFor="nome">Nome</label>
-                <input defaultValue={registro?.nome ?? ""} id="nome" type="text" />
-              </div>
-            </div>
+            <InputField defaultValue={registro?.sigla ?? ""} id="sigla" label="Sigla" />
+            <InputField defaultValue={registro?.nome ?? ""} id="nome" label="Nome" />
             <div className="actions">
               <Button type="submit">Salvar</Button>
               <Button to={paths.adminUfs} variant="secondary">
-                Voltar
+                Cancelar
               </Button>
             </div>
           </form>

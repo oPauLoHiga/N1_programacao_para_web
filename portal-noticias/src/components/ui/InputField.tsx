@@ -3,6 +3,7 @@ import type { InputHTMLAttributes, TextareaHTMLAttributes } from "react";
 type Base = {
   label: string;
   id: string;
+  wrapperClassName?: string;
 };
 
 type InputFieldProps = Base & {
@@ -14,10 +15,10 @@ type TextareaFieldProps = Base & {
 } & TextareaHTMLAttributes<HTMLTextAreaElement>;
 
 export function InputField(props: InputFieldProps | TextareaFieldProps) {
-  const { label, id, multiline, ...rest } = props;
+  const { label, id, multiline, wrapperClassName = "", ...rest } = props;
 
   return (
-    <div className="field">
+    <div className={["field", wrapperClassName].filter(Boolean).join(" ")}>
       <label htmlFor={id}>{label}</label>
       {multiline ? (
         <textarea id={id} {...(rest as TextareaHTMLAttributes<HTMLTextAreaElement>)} />

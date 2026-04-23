@@ -1,12 +1,19 @@
 import type { FormEvent } from "react";
-import { useNavigate } from "react-router";
+import { Link, useNavigate } from "react-router";
+import { useMemo, useState } from "react";
 
 import { MainLayout } from "~/components/layout/MainLayout";
 import { Button } from "~/components/ui/Button";
+import { InputField } from "~/components/ui/InputField";
+import { getCidadesPorUf } from "~/data/cidades";
+import { ufs } from "~/data/ufs";
 import { paths } from "~/lib/paths";
 
 export default function CadastroPage() {
   const navigate = useNavigate();
+  const [ufSel, setUfSel] = useState(ufs[0]?.sigla ?? "DF");
+
+  const cidadesFiltradas = useMemo(() => getCidadesPorUf(ufSel), [ufSel]);
 
   function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
@@ -15,43 +22,58 @@ export default function CadastroPage() {
 
   return (
     <MainLayout>
-      <div className="container">
-        <section className="panel">
-          <h1>Criar conta</h1>
-          <p className="note">Cadastro estatico (sem backend).</p>
+      <div className="auth-page container">
+        <div className="auth-card" style={{ maxWidth: 480 }}>
+          <div className="auth-card__logo">
+            Criar <span>conta</span>
+          </div>
           <form className="form-grid" onSubmit={handleSubmit}>
-            <div className="form-row">
-              <div className="field">
-                <label htmlFor="nome">Nome</label>
-                <input id="nome" name="nome" placeholder="Nome completo" type="text" />
-              </div>
-              <div className="field">
-                <label htmlFor="email">E-mail</label>
-                <input id="email" name="email" placeholder="nome@email.com" type="email" />
-              </div>
-            </div>
-            <div className="form-row">
-              <div className="field">
-                <label htmlFor="senha">Senha</label>
-                <input id="senha" name="senha" type="password" />
-              </div>
-              <div className="field">
-                <label htmlFor="cidade">Cidade</label>
-                <input id="cidade" name="cidade" type="text" />
-              </div>
+            <InputField id="nome" label="Nome completo" name="nome" type="text" required />
+            <InputField id="email" label="E-mail" name="email" type="email" required />
+            <InputField id="senha" label="Senha" name="senha" type="password" required />
+            <InputField
+              id="senha2"
+              label="Confirmar senha"
+              name="senha2"
+              type="password"
+              required
+            />
+            <div className="field">
+              <label htmlFor="uf">UF</label>
+              <select
+                id="uf"
+                name="uf"
+                value={ufSel}
+                onChange={(e) => setUfSel(e.target.value)}
+              >
+                {ufs.map((u) => (
+                  <option key={u.id} value={u.sigla}>
+                    {u.sigla} — {u.nome}
+                  </option>
+                ))}
+              </select>
             </div>
             <div className="field">
-              <label htmlFor="bio">Bio</label>
-              <textarea id="bio" name="bio" placeholder="Sobre voce" />
+              <label htmlFor="cidade">Cidade</label>
+              <select id="cidade" name="cidade" required>
+                {cidadesFiltradas.map((c) => (
+                  <option key={c.id} value={c.id}>
+                    {c.nome}
+                  </option>
+                ))}
+              </select>
             </div>
-            <div className="actions">
-              <Button type="submit">Cadastrar</Button>
-              <Button to={paths.login} variant="secondary">
-                Voltar ao login
-              </Button>
-            </div>
+            <InputField id="bio" label="Bio (opcional)" multiline name="bio" rows={4} />
+            <Button block type="submit">
+              Criar conta
+            </Button>
           </form>
-        </section>
+          <div className="auth-card__links">
+            <span>
+              Já tem conta? <Link to={paths.login}>Faça login</Link>
+            </span>
+          </div>
+        </div>
       </div>
     </MainLayout>
   );

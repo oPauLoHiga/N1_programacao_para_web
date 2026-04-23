@@ -3,39 +3,18 @@ import { Link } from "react-router";
 import { paths } from "~/lib/paths";
 
 export function Footer() {
+  const year = new Date().getFullYear();
+
   return (
     <footer className="footer">
-      <div className="container footer-grid">
-        <div>
-          <strong>Portal Fake News</strong>
-          <p className="note">Projeto academico em React Router v7 (dados mock em src/data).</p>
-        </div>
-        <div>
-          <strong>Paginas</strong>
-          <p>
-            <Link to={paths.buscaTag("cidade")}>Busca por tag</Link>
-          </p>
-          <p>
-            <Link to={paths.login}>Login</Link>
-          </p>
-          <p>
-            <Link to={paths.cadastro}>Cadastro</Link>
-          </p>
-        </div>
-        <div>
-          <strong>Areas</strong>
-          <p>
-            <Link to={paths.leitorPerfil}>Leitor</Link>
-          </p>
-          <p>
-            <Link to={paths.autorNoticias}>Autor</Link>
-          </p>
-          <p>
-            <Link to={paths.editorPainel}>Editor</Link>
-          </p>
-          <p>
-            <Link to={paths.adminDashboard}>Admin</Link>
-          </p>
+      <div className="container footer-legal">
+        <p className="footer-copy">
+          © {year} Portal Fake News. Projeto academico — dados estaticos.
+        </p>
+        <div className="footer-links">
+          <Link to={paths.sobre}>Sobre</Link>
+          <Link to={paths.contato}>Contato</Link>
+          <Link to={paths.termos}>Termos</Link>
         </div>
       </div>
     </footer>

@@ -16,16 +16,12 @@ export type TagRegistro = {
   slug: string;
 };
 
-export type PerfilRegistro = {
-  id: string;
-  nome: string;
-  descricao: string;
-};
-
 export type ComentarioRegistro = {
   id: string;
   noticiaId: string;
   autor: string;
   texto: string;
   data: string;
+  status: "aprovado" | "pendente" | "rejeitado";
+  avatarUrl: string;
 };

@@ -1,37 +1,28 @@
 import { MainLayout } from "~/components/layout/MainLayout";
 import { Sidebar } from "~/components/layout/Sidebar";
-import { perfis } from "~/data/perfis";
+import { getPerfilCardsComContagem } from "~/data/perfis";
 import { adminSidebar } from "~/lib/admin-nav";
 
 export default function CrudPerfisPage() {
+  const cards = getPerfilCardsComContagem();
+
   return (
     <MainLayout>
       <Sidebar items={adminSidebar}>
-        <section className="panel">
-          <h1>CRUD de perfis</h1>
-          <p className="note">Somente leitura dos mocks.</p>
-        </section>
+        <h1>Perfis (somente leitura)</h1>
+        <p className="note">Sem criar, editar ou excluir — apenas visualização.</p>
 
-        <section className="table-wrap">
-          <table>
-            <thead>
-              <tr>
-                <th>ID</th>
-                <th>Nome</th>
-                <th>Descricao</th>
-              </tr>
-            </thead>
-            <tbody>
-              {perfis.map((p) => (
-                <tr key={p.id}>
-                  <td>{p.id}</td>
-                  <td>{p.nome}</td>
-                  <td>{p.descricao}</td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        </section>
+        <div className="grid grid-3">
+          {cards.map((p) => (
+            <div className={`perfil-card ${p.cor}`} key={p.id}>
+              <h3>{p.nome}</h3>
+              <p className="note">{p.descricao}</p>
+              <p>
+                <strong>{p.quantidade}</strong> usuários
+              </p>
+            </div>
+          ))}
+        </div>
       </Sidebar>
     </MainLayout>
   );

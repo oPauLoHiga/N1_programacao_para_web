@@ -1,8 +1,10 @@
 import type { FormEvent } from "react";
-import { useNavigate } from "react-router";
+import { Link, useNavigate } from "react-router";
 
+import { DevQuickAccess } from "~/components/auth/DevQuickAccess";
 import { MainLayout } from "~/components/layout/MainLayout";
 import { Button } from "~/components/ui/Button";
+import { InputField } from "~/components/ui/InputField";
 import { paths } from "~/lib/paths";
 
 export default function LoginPage() {
@@ -15,38 +17,29 @@ export default function LoginPage() {
 
   return (
     <MainLayout>
-      <div className="container">
-        <div className="grid grid-2">
-          <section className="panel">
-            <h1>Entrar no portal</h1>
-            <p className="note">Fluxo simples de login (mock) para a area do leitor.</p>
-            <div className="actions">
-              <Button to={paths.cadastro} variant="secondary">
-                Criar conta
-              </Button>
-              <Button to={paths.buscaUf("DF")} variant="secondary">
-                Busca por UF
-              </Button>
-            </div>
-          </section>
-
-          <form className="panel form-grid" onSubmit={handleSubmit}>
-            <div className="field">
-              <label htmlFor="email">E-mail</label>
-              <input id="email" name="email" placeholder="nome@email.com" type="email" />
-            </div>
-            <div className="field">
-              <label htmlFor="senha">Senha</label>
-              <input id="senha" name="senha" placeholder="Senha" type="password" />
-            </div>
-            <div className="actions">
-              <Button type="submit">Entrar</Button>
-              <Button to={paths.lembrarSenha} variant="secondary">
-                Esqueci a senha
-              </Button>
-            </div>
+      <div className="auth-page container">
+        <div className="auth-card">
+          <div className="auth-card__logo">
+            Portal <span>Fake News</span>
+          </div>
+          <form className="form-grid" onSubmit={handleSubmit}>
+            <InputField id="email" label="E-mail" name="email" type="email" required />
+            <InputField id="senha" label="Senha" name="senha" type="password" required />
+            <label className="checkbox-row">
+              <input name="lembrar" type="checkbox" /> Lembrar-me
+            </label>
+            <Button block type="submit">
+              Entrar
+            </Button>
           </form>
+          <div className="auth-card__links">
+            <Link to={paths.lembrarSenha}>Esqueci minha senha</Link>
+            <span>
+              Não tem conta? <Link to={paths.cadastro}>Cadastre-se</Link>
+            </span>
+          </div>
         </div>
+        <DevQuickAccess />
       </div>
     </MainLayout>
   );

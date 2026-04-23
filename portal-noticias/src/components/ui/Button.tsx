@@ -1,12 +1,13 @@
 import type { ReactNode } from "react";
 import { Link } from "react-router";
 
-type ButtonVariant = "primary" | "secondary" | "danger";
+type ButtonVariant = "primary" | "secondary" | "danger" | "success";
 
 function classForVariant(variant: ButtonVariant) {
   if (variant === "primary") return "button";
   if (variant === "secondary") return "button secondary";
-  return "button danger";
+  if (variant === "danger") return "button danger";
+  return "button button--success";
 }
 
 type ButtonProps = {
@@ -16,6 +17,7 @@ type ButtonProps = {
   href?: string;
   type?: "button" | "submit";
   className?: string;
+  block?: boolean;
   onClick?: () => void;
 };
 
@@ -26,9 +28,17 @@ export function Button({
   href,
   type = "button",
   className = "",
+  block = false,
   onClick,
 }: ButtonProps) {
-  const cls = [classForVariant(variant), className].filter(Boolean).join(" ").trim();
+  const cls = [
+    classForVariant(variant),
+    block ? "button--block" : "",
+    className,
+  ]
+    .filter(Boolean)
+    .join(" ")
+    .trim();
 
   if (to) {
     return (

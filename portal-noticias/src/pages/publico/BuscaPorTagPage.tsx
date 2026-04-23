@@ -1,39 +1,50 @@
 import { useParams } from "react-router";
 
 import { MainLayout } from "~/components/layout/MainLayout";
-import { NewsCard } from "~/components/ui/NewsCard";
-import { SectionTitle } from "~/components/ui/SectionTitle";
-import { getNoticiasPorTagSlug } from "~/data/noticias";
+import { Breadcrumb } from "~/components/ui/Breadcrumb";
+import { NoticiaCard } from "~/components/ui/NoticiaCard";
+import { TagBadge } from "~/components/ui/TagBadge";
+import { getNoticiasPorTagSlug, getAllTagsUnicos } from "~/data/noticias";
 import { paths } from "~/lib/paths";
 
 export default function BuscaPorTagPage() {
   const { slug = "" } = useParams();
   const lista = getNoticiasPorTagSlug(slug);
+  const todas = getAllTagsUnicos();
+  const relacionadas = todas.filter((t) => t.toLowerCase() !== slug.toLowerCase());
 
   return (
     <MainLayout>
       <div className="container">
-        <SectionTitle
-          note={`Tag: ${slug || "?"}. Dados estaticos em src/data/noticias.ts.`}
-          title="Busca por tag"
+        <Breadcrumb
+          items={[
+            { label: "Home", to: paths.home },
+            { label: slug || "Tag" },
+          ]}
         />
+
+        <div style={{ marginBottom: 20 }}>
+          <TagBadge label={slug} size="lg" slug={slug} />
+        </div>
+
         {lista.length === 0 ? (
-          <p className="note">Nenhuma noticia com essa tag.</p>
+          <p className="note">Nenhuma notícia com essa tag.</p>
         ) : (
           <div className="grid grid-3">
             {lista.map((n) => (
-              <NewsCard
-                key={n.id}
-                tag={n.tags[0] ?? "geral"}
-                title={n.titulo}
-                meta={n.meta}
-                note={n.resumo}
-                linkLabel="Ler"
-                to={paths.noticia(n.id)}
-              />
+              <NoticiaCard key={n.id} noticia={n} />
             ))}
           </div>
         )}
+
+        <section className="section">
+          <h2>Tags relacionadas</h2>
+          <div className="tag-cloud">
+            {relacionadas.map((t) => (
+              <TagBadge key={t} slug={t} to={paths.buscaTag(t)} />
+            ))}
+          </div>
+        </section>
       </div>
     </MainLayout>
   );

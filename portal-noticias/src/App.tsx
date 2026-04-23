@@ -15,10 +15,13 @@ import BuscaPorTagPage from "~/pages/publico/BuscaPorTagPage";
 import BuscaPorUFPage from "~/pages/publico/BuscaPorUFPage";
 import CadastroPage from "~/pages/publico/CadastroPage";
 import DetalheNoticiaPage from "~/pages/publico/DetalheNoticiaPage";
+import ContatoPage from "~/pages/publico/ContatoPage";
 import HomePage from "~/pages/publico/HomePage";
 import LembrarSenhaPage from "~/pages/publico/LembrarSenhaPage";
 import LoginPage from "~/pages/publico/LoginPage";
 import NotFoundPage from "~/pages/publico/NotFoundPage";
+import SobrePage from "~/pages/publico/SobrePage";
+import TermosPage from "~/pages/publico/TermosPage";
 import CrudCidadesPage from "~/pages/superadmin/CrudCidadesPage";
 import CrudNoticiasPage from "~/pages/superadmin/CrudNoticiasPage";
 import CrudPerfisPage from "~/pages/superadmin/CrudPerfisPage";
@@ -38,6 +41,9 @@ export function App() {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<HomePage />} />
+        <Route path="/sobre" element={<SobrePage />} />
+        <Route path="/contato" element={<ContatoPage />} />
+        <Route path="/termos" element={<TermosPage />} />
         <Route path="/login" element={<LoginPage />} />
         <Route path="/cadastro" element={<CadastroPage />} />
         <Route path="/lembrar-senha" element={<LembrarSenhaPage />} />
