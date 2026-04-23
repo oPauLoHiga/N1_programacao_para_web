@@ -1,19 +1,19 @@
 import { BrowserRouter, Route, Routes } from "react-router";
 
-import AdminCitiesPage from "~/pages/admin-cities";
-import AdminDashboardPage from "~/pages/admin-dashboard";
-import AdminTagsPage from "~/pages/admin-tags";
-import AdminUfsPage from "~/pages/admin-ufs";
-import AuthorCrudPage from "~/pages/author-crud";
-import AuthorNewsPage from "~/pages/author-news";
-import HomePage from "~/pages/home";
-import NotFoundPage from "~/pages/not-found";
-import PublicArticlePage from "~/pages/public-article";
-import PublicLoginPage from "~/pages/public-login";
-import PublicNewsPage from "~/pages/public-news";
-import PublicRegisterPage from "~/pages/public-register";
-import ReaderFeedPage from "~/pages/reader-feed";
-import ReaderProfilePage from "~/pages/reader-profile";
+import AuthorNewsPage from "~/pages/autor/author-news";
+import AuthorCrudPage from "~/pages/editor/author-crud";
+import ReaderFeedPage from "~/pages/leitor/reader-feed";
+import ReaderProfilePage from "~/pages/leitor/reader-profile";
+import HomePage from "~/pages/publico/home";
+import NotFoundPage from "~/pages/publico/not-found";
+import PublicArticlePage from "~/pages/publico/public-article";
+import PublicLoginPage from "~/pages/publico/public-login";
+import PublicNewsPage from "~/pages/publico/public-news";
+import PublicRegisterPage from "~/pages/publico/public-register";
+import AdminCitiesPage from "~/pages/superadmin/admin-cities";
+import AdminDashboardPage from "~/pages/superadmin/admin-dashboard";
+import AdminTagsPage from "~/pages/superadmin/admin-tags";
+import AdminUfsPage from "~/pages/superadmin/admin-ufs";
 
 export function App() {
   return (
